@@ -1,0 +1,56 @@
+name: CI (Skills Schema Validation)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Skills Frontmatter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate SKILL.md Frontmatter
+        shell: bash
+        run: |
+          HAS_ERROR=0
+          for dir in skills/*/; do
+            if [ -d "$dir" ]; then
+              skill_file="${dir}SKILL.md"
+              if [ ! -f "$skill_file" ]; then
+                echo "::error::Missing SKILL.md in $dir"
+                HAS_ERROR=1
+                continue
+              fi
+              # Check frontmatter delimiters
+              if ! head -n 1 "$skill_file" | grep -q "^---$"; then
+                echo "::error::Missing opening '---' frontmatter in $skill_file"
+                HAS_ERROR=1
+              fi
+              if ! grep -q "^name:" "$skill_file"; then
+                echo "::error::Missing 'name:' field in $skill_file"
+                HAS_ERROR=1
+              fi
+              if ! grep -q "^description:" "$skill_file"; then
+                echo "::error::Missing 'description:' field in $skill_file"
+                HAS_ERROR=1
+              fi
+              echo "✓ Verified $skill_file"
+            fi
+          done
+          if [ "$HAS_ERROR" -ne 0 ]; then
+            exit 1
+          fi
+          echo "All skill definitions validated successfully!"
