@@ -43,11 +43,11 @@ The system is designed strictly following **KISS** (Keep It Simple, Stupid) and 
 ## 🚀 One-Click Installation
 
 ### 🌟 Universal 1-File Setup (Recommended: Windows, Linux, macOS)
-Use the pure Node.js installer from the dedicated [`tuquet/tuquet-claude-agy`](https://github.com/tuquet/tuquet-claude-agy) repository:
+Use the pure Node.js installer from the dedicated [`tuquet/claude-agy`](https://github.com/tuquet/claude-agy) repository:
 
 ```bash
 # Run one-line network installer
-curl -fsSL https://raw.githubusercontent.com/tuquet/tuquet-claude-agy/main/setup.mjs | node
+curl -fsSL https://raw.githubusercontent.com/tuquet/claude-agy/main/setup.mjs | node
 ```
 
 *Universal Setup Highlights:*
@@ -63,7 +63,7 @@ If Scoop is installed on your workstation:
 
 ```powershell
 # 1. Add Tuquet Scoop Bucket
-scoop bucket add tuquet https://github.com/tuquet/tuquet-scoop-bucket
+scoop bucket add tuquet https://github.com/tuquet/scoop-bucket
 
 # 2. Install Claude-Agy
 scoop install claude-agy
@@ -76,7 +76,7 @@ scoop install claude-agy
 Open **PowerShell** (or Windows Terminal) and run:
 
 ```powershell
-irm https://raw.githubusercontent.com/tuquet/tuquet-claude-agy/main/scripts/setup.ps1 | iex
+irm https://raw.githubusercontent.com/tuquet/claude-agy/main/scripts/setup.ps1 | iex
 ```
 
 *Windows Installer Highlights:*
@@ -92,7 +92,7 @@ irm https://raw.githubusercontent.com/tuquet/tuquet-claude-agy/main/scripts/setu
 Open your terminal and run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tuquet/tuquet-claude-agy/main/scripts/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tuquet/claude-agy/main/scripts/setup.sh | bash
 ```
 
 *Linux Installer Highlights:*

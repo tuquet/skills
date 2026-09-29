@@ -1,4 +1,4 @@
-# 🎯 tuquet-skills
+# 🎯 Tuquet Skills
 
 > **Enterprise AI Coding Agent Tooling & Skillsets**  
 > Bộ sưu tập kỹ năng (Skills), runbooks tự động hóa và giải pháp tối ưu hóa hạ tầng dành cho AI Coding Agents (Google Antigravity, Claude Code, Cursor, Codex).
@@ -46,7 +46,7 @@ node skills/claude-agy/scripts/setup.mjs
 Hoặc cài đặt 1 lệnh trực tiếp qua mạng:
 ```bash
 # Chạy được trên cả Windows (PowerShell/CMD), Linux, macOS
-curl -fsSL https://raw.githubusercontent.com/tuquet/tuquet-skills/main/skills/claude-agy/scripts/setup.mjs | node
+curl -fsSL https://raw.githubusercontent.com/tuquet/skills/main/skills/claude-agy/scripts/setup.mjs | node
 ```
 
 ---
@@ -56,7 +56,7 @@ Nếu bạn sử dụng [Scoop](https://scoop.sh), đây là phương pháp chu�
 
 ```powershell
 # 1. Thêm Tuquet Scoop Bucket
-scoop bucket add tuquet https://github.com/tuquet/tuquet-scoop-bucket
+scoop bucket add tuquet https://github.com/tuquet/scoop-bucket
 
 # 2. Cài đặt Claude-Agy
 scoop install claude-agy
@@ -68,13 +68,13 @@ scoop install claude-agy
 ### 🪟 Dành cho Windows (PowerShell Script Trực Tiếp)
 Mở **PowerShell** và dán lệnh:
 ```powershell
-irm https://raw.githubusercontent.com/tuquet/tuquet-skills/main/skills/claude-agy/scripts/setup.ps1 | iex
+irm https://raw.githubusercontent.com/tuquet/skills/main/skills/claude-agy/scripts/setup.ps1 | iex
 ```
 
 ### 🐧 Dành cho Linux / Ubuntu / Debian / WSL
 Mở terminal và dán lệnh:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tuquet/tuquet-skills/main/skills/claude-agy/scripts/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tuquet/skills/main/skills/claude-agy/scripts/setup.sh | bash
 ```
 
 ---
@@ -85,7 +85,7 @@ curl -fsSL https://raw.githubusercontent.com/tuquet/tuquet-skills/main/skills/cl
 
 ```bash
 mkdir -p ~/.gemini/config/skills
-ln -sf /root/tuquet-skills/skills/claude-agy ~/.gemini/config/skills/claude-agy
+ln -sf ~/Repository/tuquet/skills/skills/claude-agy ~/.gemini/config/skills/claude-agy
 ```
 
 ---
