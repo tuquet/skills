@@ -1,87 +1,98 @@
-# 🎯 Tuquet Skills
+<div align="center">
+  <img src="./assets/logo.svg" width="76" height="76" alt="Skills Logo" />
+  <h1>Skills</h1>
+  <p><strong>Enterprise AI Coding Agent Tooling, Runbooks &amp; Autonomous Workflows</strong></p>
 
-> **Enterprise AI Coding Agent Tooling & Skillsets**  
-> Bộ sưu tập kỹ năng (Skills), runbooks tự động hóa và giải pháp tối ưu hóa hạ tầng dành cho AI Coding Agents (Google Antigravity, Claude Code, Cursor, Codex).
-
----
-
-## 💎 Giá trị Doanh nghiệp (Enterprise Business Value)
-
-Các giải pháp trong kho lưu trữ này được thiết kế theo các nguyên tắc kỹ nghệ phần mềm cốt lõi: **ROI cao**, **Zero-Touch Automation**, **Bảo mật sandbox**, và triết lý **KISS & YAGNI** (Keep It Simple, Stupid & You Aren't Gonna Need It):
-
-1. **Tối ưu hóa Chi phí Vận hành (Cost Reduction & Infinite Quota)**:
-   - Cắt giảm 100% chi phí token API trực tiếp cho các công cụ coding agent bằng cách tận dụng hạn ngạch Google Antigravity OAuth có sẵn của doanh nghiệp.
-   - Giúp các nhóm kỹ sư tiết kiệm từ hàng trăm đến hàng ngàn USD mỗi tháng mà vẫn được trải nghiệm sức mạnh của các mô hình hàng đầu (Claude 3.7 Sonnet, Opus 4.6 Thinking, Gemini 3.8 Flash).
-
-2. **Tiết kiệm Tài nguyên Hệ thống (Zero RAM Leakage)**:
-   - Cơ chế **On-Demand Proxy Lifecycle**: Reverse proxy chỉ khởi chạy khi kỹ sư bắt đầu phiên làm việc và **tự động giải phóng hoàn toàn** khi thoát (`0MB RAM idle lingering`). Không cần duy trì background daemon thường trực tốn RAM.
-
-3. **Sẵn sàng cho CI/CD & Headless Container**:
-   - Vượt qua các rào cản phân quyền root và hộp thoại xác nhận tương tác (`IS_SANDBOX=1` + `bypassPermissionsModeAccepted`), cho phép agent vận hành tự động trong Docker, GitHub Actions runner, Kubernetes pod hoặc máy chủ Linux headless.
-
-4. **Triển khai Đa Nền tảng Chuẩn hóa (Cross-Platform Zero-Touch)**:
-   - Cài đặt 1 lệnh duy nhất cho cả máy chủ **Linux** và máy trạm **Windows 10/11** mới tinh.
-   - Tự động cấu hình môi trường, tải binary, đồng bộ token và phơi command ra hệ thống toàn cục.
+  <p>
+    <a href="https://github.com/tuquet/scoop-bucket"><img src="https://img.shields.io/badge/Scoop-Available-brightgreen.svg" alt="Scoop" /></a>
+    <img src="https://img.shields.io/badge/Agent-Google%20Antigravity-blue.svg" alt="Google Antigravity" />
+    <img src="https://img.shields.io/badge/CLI-Claude%20Code-orange.svg" alt="Claude Code" />
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
+  </p>
+</div>
 
 ---
 
-## 📚 Danh mục Skills (Catalog)
+> **Enterprise AI Coding Agent Tooling, Runbooks & Autonomous Workflows**  
+> Curated collection of skills, automation runbooks, and infrastructure optimizations for AI Coding Agents (Google Antigravity, Claude Code, Cursor, Codex).
 
-| Skill | Giá trị Doanh nghiệp & Tính năng Kỹ thuật | Nền tảng | Trạng thái |
+## 💎 Enterprise Business Value
+
+The solutions in this repository are designed following core software engineering principles: **High ROI**, **Zero-Touch Automation**, **Sandbox Security**, and **KISS & YAGNI** (Keep It Simple, Stupid & You Aren't Gonna Need It):
+
+1. **Operational Cost Reduction & Infinite Quota**:
+   - Eliminates 100% of direct API token costs for coding agents by leveraging existing Google Antigravity enterprise OAuth quotas.
+   - Saves engineering teams hundreds to thousands of dollars per month while retaining access to premier frontier models (Claude 3.7 Sonnet, Opus 4.6 Thinking, Gemini 3.8 Flash).
+
+2. **System Resource Conservation (Zero RAM Leakage)**:
+   - **On-Demand Proxy Lifecycle**: Reverse proxy launches strictly when the developer begins an agent session and **auto-terminates cleanly on exit** (`0MB RAM idle lingering`). No lingering background daemons draining system memory.
+
+3. **CI/CD & Headless Container Readiness**:
+   - Bypasses root permission prompts and interactive trust confirmation dialogs (`IS_SANDBOX=1` + `bypassPermissionsModeAccepted`), enabling unattended agent execution in Docker, GitHub Actions runners, Kubernetes pods, and headless Linux servers.
+
+4. **Cross-Platform Zero-Touch Deployment**:
+   - Single-command setup across **Linux** servers and fresh **Windows 10/11** developer workstations.
+   - Automatically provisions environments, downloads binaries, synchronizes OAuth tokens, and exposes global system commands.
+
+---
+
+## 📚 Skills Catalog
+
+| Skill | Business Value & Technical Features | Platform | Status |
 | :--- | :--- | :---: | :---: |
-| [**`claude-agy`**](./skills/claude-agy/SKILL.md) | **Cầu nối Claude Code CLI với Google Antigravity OAuth (`claude-agy`)**:<br>• Tiết kiệm chi phí API bằng Google Antigravity OAuth.<br>• Tự động bypass root permissions & trust dialog.<br>• Bộ lọc chống mã lỗi 429 quota từ Google Cloud.<br>• Quản lý vòng đời proxy thông minh (auto-kill khi thoát session).<br>• Tự động khám phá mô hình qua lệnh `/model` (chuẩn KISS & YAGNI). | 🐧 Linux<br>🪟 Windows 10/11 | ✅ Production Ready |
+| [**`claude-agy`**](./skills/claude-agy/SKILL.md) | **Claude Code CLI Bridge to Google Antigravity OAuth (`claude-agy`)**:<br>• Zero API token cost via Google Antigravity OAuth.<br>• Automated root permission & trust dialog bypass.<br>• Rate-limit filter mitigating upstream Google Cloud 429 errors.<br>• Intelligent proxy lifecycle (auto-kill on session termination).<br>• Dynamic model discovery via `/model` command (KISS & YAGNI). | 🐧 Linux<br>🪟 Windows 10/11 | ✅ Production Ready |
 
 ---
 
-## 🚀 Hướng dẫn Cài đặt Nhanh (1-Click Setup)
+## 🚀 1-Click Installation Guide
 
-### 🌟 Cách Tối Ưu Nhất: Universal 1-File Setup (Đa Nền Tảng: Windows, Linux, macOS)
-Do Claude Code CLI yêu cầu **Node.js (>= 18)**, bạn có thể cài đặt bằng **1 file JavaScript duy nhất** không phân biệt hệ điều hành:
+### 🌟 Universal 1-File Setup (Cross-Platform: Windows, Linux, macOS)
+Since Claude Code CLI requires **Node.js (>= 18)**, install via a **single universal JavaScript script**:
 
 ```bash
-# Chạy trực tiếp từ repo vừa clone
+# Run directly from cloned repo
 node skills/claude-agy/scripts/setup.mjs
 ```
 
-Hoặc cài đặt 1 lệnh trực tiếp qua mạng:
+Or install via one-line network execution:
 ```bash
-# Chạy được trên cả Windows (PowerShell/CMD), Linux, macOS
+# Runs natively on Windows (PowerShell/CMD), Linux, and macOS
 curl -fsSL https://raw.githubusercontent.com/tuquet/skills/main/skills/claude-agy/scripts/setup.mjs | node
 ```
 
 ---
 
-### 🪟 Dành cho Windows (Qua Scoop - Khuyên Dùng Cho Developer)
-Nếu bạn sử dụng [Scoop](https://scoop.sh), đây là phương pháp chuẩn hóa, cách ly và tiện lợi nhất:
+### 🪟 Windows via Scoop (Recommended for Developers)
+If you use [Scoop](https://scoop.sh), this is the cleanest, isolated distribution channel:
 
 ```powershell
-# 1. Thêm Tuquet Scoop Bucket
+# 1. Add Tuquet Scoop Bucket
 scoop bucket add tuquet https://github.com/tuquet/scoop-bucket
 
-# 2. Cài đặt Claude-Agy
+# 2. Install Claude-Agy
 scoop install claude-agy
 ```
-*Tự động cài đặt dependency Node.js LTS, cấu hình shims, bypass trust dialog, persist token & config qua các lần cập nhật (`scoop update claude-agy`).*
+*Automatically installs Node.js LTS dependency, configures shims, bypasses trust dialogs, and persists tokens & configurations across version updates (`scoop update claude-agy`).*
 
 ---
 
-### 🪟 Dành cho Windows (PowerShell Script Trực Tiếp)
-Mở **PowerShell** và dán lệnh:
+### 🪟 Windows (Direct PowerShell Script)
+Open **PowerShell** and run:
 ```powershell
 irm https://raw.githubusercontent.com/tuquet/skills/main/skills/claude-agy/scripts/setup.ps1 | iex
 ```
 
-### 🐧 Dành cho Linux / Ubuntu / Debian / WSL
-Mở terminal và dán lệnh:
+### 🐧 Linux / Ubuntu / Debian / WSL
+Open a terminal and run:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/tuquet/skills/main/skills/claude-agy/scripts/setup.sh | bash
 ```
 
 ---
 
-## 🔌 Tích hợp vào Google Antigravity (Global Skills)
+## 🔌 Google Antigravity Integration (Global Skills)
 
-Để trợ lý AI Antigravity tự động nhận diện và sử dụng kỹ năng `claude-agy` trong mọi phiên làm việc:
+Enable the Google Antigravity AI assistant to automatically discover and execute the `claude-agy` skill across all working sessions:
 
 ```bash
 mkdir -p ~/.gemini/config/skills
@@ -90,27 +101,54 @@ ln -sf ~/Repository/tuquet/skills/skills/claude-agy ~/.gemini/config/skills/clau
 
 ---
 
-## 💡 Triết lý Thiết kế: KISS & YAGNI
+## 💡 Design Philosophy: KISS & YAGNI
 
-Hệ thống tuân thủ nghiêm ngặt nguyên tắc **KISS** (Keep It Simple, Stupid) và **YAGNI** (You Aren't Gonna Need It):
-- **Không cấu hình alias dư thừa**: Không tạo danh sách hàng chục alias ảo gây rối cấu hình.
-- **Model Discovery tự nhiên**: Khi gõ `claude-agy`, kỹ sư chỉ cần gõ `/model` để xem và chuyển đổi trực quan giữa toàn bộ các model upstream do Google Antigravity cung cấp.
-- **Tập trung vào tính ổn định**: Cấu hình tối giản, chỉ giữ lại các tham số thực sự cần thiết (cổng proxy, lọc từ nhạy cảm chống lỗi 429, thư mục auth).
+The system strictly follows **KISS** (Keep It Simple, Stupid) and **YAGNI** (You Aren't Gonna Need It) principles:
+- **Zero Redundant Aliases**: Avoids dozens of phantom alias layers that create configuration drift.
+- **Natural Model Discovery**: When running `claude-agy`, simply use `/model` to interactively view and switch between all upstream models provided by Google Antigravity.
+- **Engineered for Reliability**: Minimalist configuration retaining only essential parameters (proxy port, 429 quota filters, auth paths).
 
 ---
 
-## 🛠️ Đóng góp thêm Skill mới
+## 🛠️ Contributing New Skills
 
-Cấu trúc chuẩn của một skill:
+Standard directory structure for a skill:
 ```text
 skills/<skill-name>/
-├── SKILL.md          # Hướng dẫn chính kèm YAML frontmatter (name, description)
-├── scripts/          # Script tự động hóa (setup.sh, setup.ps1, uninstaller)
-├── references/       # Tài liệu kiến trúc, specs chi tiết
-└── examples/         # Ví dụ mẫu
+├── SKILL.md          # Primary instruction with YAML frontmatter (name, description)
+├── scripts/          # Automation scripts (setup.sh, setup.ps1, uninstaller)
+├── references/       # Architecture documents and technical specs
+└── examples/         # Reference implementations and usage patterns
 ```
 
 ---
 
+## 🌐 Ecosystem
+
+Part of the **Automation & Agent Ecosystem**:
+
+- [Automa](https://github.com/tuquet/automa) — Native Chrome/Edge Desktop UI Automation Browser.
+- [Runner](https://github.com/tuquet/runner) — High-Performance Distributed Process Supervision Engine in Rust.
+- [Browser](https://github.com/tuquet/browser) — High-Performance Headless Web Scraping & Stealth Automation Core.
+- [Cloud](https://github.com/tuquet/cloud) — Enterprise Orchestration & Real-time Task Control Plane.
+- [CLI](https://github.com/tuquet/cli) — Developer Ergonomic CLI & Unified Command Center.
+- [Lib](https://github.com/tuquet/lib) — Monorepo for Shared Enterprise UI & Utilities (`vue-ui`, `vue-table`, `md-export`, `extension-runner`, `lunar`).
+- [Scoop Bucket](https://github.com/tuquet/scoop-bucket) — Official Windows Scoop Distribution Channel.
+
+---
+
 ## 📄 License
-MIT © [tuquet](https://github.com/tuquet)
+
+Distributed under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+  <samp>
+    <a href="https://tuquet.github.io">Portfolio</a> •
+    <a href="https://tuquet.github.io/cv">CV &amp; Resume</a> •
+    <a href="https://tuquet.github.io/automa">Automa Studio</a> •
+    <a href="https://tuquet.github.io/lib">Component Lab</a> •
+    <a href="https://github.com/tuquet/scoop-bucket">Scoop Bucket</a>
+  </samp>
+</div>
