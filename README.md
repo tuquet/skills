@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/logo.svg" width="76" height="76" alt="Skills Logo" />
+  <img src="https://tuquet.github.io/icons/skills.svg" width="76" height="76" alt="Skills Logo" />
   <h1>Skills</h1>
   <p><strong>Enterprise AI Coding Agent Tooling, Runbooks &amp; Autonomous Workflows</strong></p>
 
