@@ -1,14 +1,14 @@
 ---
 name: claude-agy
 description: >-
-  Comprehensive guide, cheatsheet, and automated runbook for configuring and running Anthropic's Claude Code CLI with Google Antigravity OAuth (claude-agy) on Linux, macOS, and Windows, bypassing Linux root permission checks (IS_SANDBOX=1), avoiding 429 RESOURCE_EXHAUSTED filters, and managing proxy lifecycles on fresh machines.
+  Comprehensive guide, cheatsheet, and automated runbook for configuring and running Anthropic's Claude Code CLI with Google Antigravity OAuth (claude-agy), bypassing root permission checks (IS_SANDBOX=1), avoiding 429 RESOURCE_EXHAUSTED filters, and managing proxy lifecycles on fresh machines.
 ---
 
 # Claude Code + Antigravity OAuth Integration (`claude-agy`)
 
 This skill provides a complete automated guide, operations runbook, and architectural reference for running **Anthropic's Claude Code CLI** powered by **Google Antigravity OAuth** quotas instead of direct paid Anthropic API keys.
 
-Fully supports **Linux** (Ubuntu/Debian/WSL), **macOS**, and fresh **Windows 10/11** workstations.
+Designed for robust, zero-friction operation across developer workstations and headless server environments.
 
 ---
 
@@ -40,65 +40,44 @@ The system is designed strictly following **KISS** (Keep It Simple, Stupid) and 
 
 ---
 
-## 🚀 One-Click Installation
+## 🚀 Installation
 
-### 🌟 Universal 1-File Setup (Recommended: Windows, Linux, macOS)
+### 🌟 Universal Node.js Setup (Recommended)
 Use the pure Node.js installer from the dedicated [`tuquet/claude-agy`](https://github.com/tuquet/claude-agy) repository:
 
-```bash
+```console
 # Run one-line network installer
-curl -fsSL https://raw.githubusercontent.com/tuquet/claude-agy/main/setup.mjs | node
+curl -fsSL https://raw.githubusercontent.com/tuquet/claude-agy/main/scripts/setup.mjs | node
 ```
 
 *Universal Setup Highlights:*
-- **100% Native Node.js**: Fully compatible with Windows 10/11, macOS, and Linux.
+- **100% Native Node.js**: Universal cross-platform compatibility without OS fragmentation.
 - **Dynamic Multi-Source Token Resolver**: Automatically detects OAuth tokens from Antigravity CLI (`antigravity-cli`), Antigravity IDE (`jetski-standalone-oauth-token`), and OAuth credentials (`oauth_creds.json`).
 - **Resilient Proxy & Gateway Support**: Auto-detects corporate firewalls and corporate web gateways.
 - **Automated Launcher & PATH Configuration**: Generates launcher binaries and scripts and exposes them globally on system PATH.
 
 ---
 
-### 🪟 Windows (Scoop Package Manager - Recommended for Windows Developers)
+### 📦 Package Manager (Scoop)
 If Scoop is installed on your workstation:
 
-```powershell
+```console
 # 1. Add Tuquet Scoop Bucket
 scoop bucket add tuquet https://github.com/tuquet/scoop-bucket
 
 # 2. Install Claude-Agy
 scoop install claude-agy
 ```
-*Benefits:* Automatic dependency management (`nodejs-lts`), automatic shims, persistent tokens/config across version updates in `~/scoop/persist/claude-agy`, and one-command upgrades via `scoop update claude-agy`.
+*Benefits:* Automatic dependency management (`nodejs-lts`), automatic shims, persistent tokens/config across version updates, and one-command upgrades via `scoop update claude-agy`.
 
 ---
 
-### 🪟 Windows 10 / 11 (Direct PowerShell Script)
-Open **PowerShell** (or Windows Terminal) and run:
+### 💻 Local Source Installation
+From a cloned or local repository:
 
-```powershell
-irm https://raw.githubusercontent.com/tuquet/claude-agy/main/scripts/setup.ps1 | iex
+```console
+./install.sh
 ```
-
-*Windows Installer Highlights:*
-- Automatically checks & installs Node.js LTS (via `winget` if missing).
-- Automatically installs `@anthropic-ai/claude-code`.
-- Downloads `cli-proxy-api.exe` binary for Windows AMD64.
-- **100% Pure PowerShell & Strict ASCII**: Zero Python requirement, decoding JWT tokens and syncing OAuth credentials natively without encoding issues.
-- Creates `claude-agy.cmd` wrapper and adds to User `PATH` (usable from CMD, PowerShell, and Git Bash).
-
----
-
-### 🐧 Linux / Ubuntu / Debian / WSL
-Open your terminal and run:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/tuquet/claude-agy/main/scripts/setup.sh | bash
-```
-
-*Linux Installer Highlights:*
-- Automatically installs required dependencies (`curl`, `tar`, `netcat`, `python3`).
-- Automatically bypasses Claude Code root execution restrictions (`IS_SANDBOX=1`).
-- Exposes system-wide command via `/usr/local/bin/claude-agy` symlink.
 
 ---
 
@@ -107,21 +86,22 @@ curl -fsSL https://raw.githubusercontent.com/tuquet/claude-agy/main/scripts/setu
 The application is cleanly packaged and isolated:
 
 ```text
-# Linux: ~/claude-agy/  |  Windows: %USERPROFILE%\claude-agy\
+/root/claude-agy/
 ├── bin/
-│   ├── claude-agy            # Primary launcher script (Linux bash / Windows ps1 & cmd)
-│   └── cli-proxy-api         # Reverse proxy binary (Linux elf / Windows .exe)
+│   ├── claude-agy            # Universal CLI entrypoint & proxy lifecycle supervisor
+│   └── cli-proxy-api         # Native reverse proxy binary
 ├── config/
-│   ├── config.yaml           # Minimalist proxy configuration (KISS & YAGNI)
+│   ├── config.yaml           # Proxy routing configuration (KISS & YAGNI)
 │   └── settings.env          # Environment settings (port, auto-bypass permission, default model)
 ├── data/
 │   └── antigravity-auth.json # Synced OAuth credentials from Antigravity CLI
-├── logs/
-│   └── proxy.log             # Proxy runtime logs
+├── logs/                     # Runtime logs (ignored in VCS)
 ├── scripts/
-│   ├── sync-token.py / .ps1  # Automated token synchronization script
-│   └── uninstall.sh / .ps1   # Clean uninstallation script
-├── uninstall.sh / .ps1       # Root shortcut for quick uninstallation
+│   ├── setup.mjs             # Universal Node.js installer
+│   ├── sync-token.mjs        # Universal Node.js token scanner & synchronizer
+│   └── uninstall.mjs         # Universal Node.js uninstaller
+├── install.sh                # Standard local installer wrapper
+├── uninstall.sh              # Standard local uninstaller wrapper
 └── README.md
 ```
 
@@ -132,7 +112,7 @@ The application is cleanly packaged and isolated:
 ```yaml
 host: "127.0.0.1"
 port: 8318
-auth-dir: "/root/claude-agy/data"  # Or C:/Users/.../data on Windows
+auth-dir: "/root/claude-agy/data"
 api-keys:
   - "sk-personal-claude-token"
 remote-management:
@@ -162,7 +142,7 @@ antigravity:
 ## 🛡️ Permission Bypass Techniques (Root & Unattended CI/CD)
 
 ### The Issue:
-When running `--dangerously-skip-permissions` on Linux as `root`, Claude Code blocks execution:
+When running `--dangerously-skip-permissions` as `root`, Claude Code blocks execution:
 ```text
 --dangerously-skip-permissions cannot be used with root/sudo privileges for security reasons
 ```
@@ -211,17 +191,21 @@ When running `--dangerously-skip-permissions` on Linux as `root`, Claude Code bl
 
 ## 🗑️ Clean Uninstallation
 
-### On Windows:
-```powershell
-# If installed via Scoop:
+Via package manager:
+```console
 scoop uninstall claude-agy
-
-# If installed via direct script:
-& "$env:USERPROFILE\claude-agy\uninstall.ps1"
 ```
 
-### On Linux:
-```bash
+Via universal script:
+```console
+node ~/claude-agy/scripts/uninstall.mjs
+
+# Or clean up all configurations and cache:
+node ~/claude-agy/scripts/uninstall.mjs --all
+```
+
+Via root wrapper:
+```console
 ~/claude-agy/uninstall.sh
 ```
 
@@ -233,8 +217,7 @@ scoop uninstall claude-agy
    - *Cause:* Google backend filters Claude-specific system prompts.
    - *Fix:* Ensure `antigravity.sensitive-words` is present in `config/config.yaml`.
 2. **Port 8318 Already in Use (`Address already in use`):**
-   - *Linux:* `pkill -f "cli-proxy-api.*8318"`
-   - *Windows:* `Get-Process cli-proxy-api | Stop-Process -Force`
+   - Terminate lingering proxy process: `fuser -k 8318/tcp` or universal process cleaner in `scripts/uninstall.mjs`.
 3. **Failed to Sync OAuth Token:**
    - Ensure you have logged into Google Antigravity CLI at least once to generate credentials at `~/.gemini/antigravity-cli/antigravity-oauth-token` or `~/.gemini/jetski-standalone-oauth-token`.
    - If missing, trigger a login session: `cli-proxy-api --config config/config.yaml -antigravity-login`.
