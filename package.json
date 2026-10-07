@@ -1,0 +1,40 @@
+{
+  "name": "@tuquet/skills",
+  "version": "1.1.0",
+  "description": "Enterprise AI Coding Agent Tooling, Runbooks & Autonomous Workflows",
+  "type": "module",
+  "main": "./scripts/link.mjs",
+  "bin": {
+    "tuquet-skills": "./bin/cli.mjs"
+  },
+  "files": [
+    "skills",
+    "scripts",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "link": "node scripts/link.mjs",
+    "link:global": "node scripts/link.mjs --global",
+    "link:project": "node scripts/link.mjs --project",
+    "unlink": "node scripts/link.mjs --unlink",
+    "list": "node scripts/link.mjs --list",
+    "sync:docs": "node scripts/generate-catalog.mjs",
+    "check:docs": "node scripts/generate-catalog.mjs --check"
+  },
+  "keywords": [
+    "agent-skills",
+    "skills",
+    "antigravity",
+    "claude-code",
+    "cursor",
+    "zero-trust",
+    "vps-security"
+  ],
+  "author": "Tu Quet",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuquet/skills.git"
+  }
+}

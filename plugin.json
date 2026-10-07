@@ -1,0 +1,7 @@
+{
+  "name": "tuquet",
+  "version": "1.1.0",
+  "description": "Tuquet Master Plugin: Unified CLI & Network Bridge, Claude-Agy OAuth Integration, and VPS Security Standard.",
+  "author": "Tuquet Team",
+  "repository": "https://github.com/tuquet/skills"
+}

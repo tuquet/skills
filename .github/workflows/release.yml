@@ -1,0 +1,74 @@
+name: Release (Automated Skills Package)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name (e.g. v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    name: Package and Release Plugin
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate SKILL.md Frontmatter
+        shell: bash
+        run: |
+          for dir in skills/*/; do
+            if [ -d "$dir" ]; then
+              skill_file="${dir}SKILL.md"
+              test -f "$skill_file" || (echo "Missing $skill_file" && exit 1)
+              grep -q "^---$" "$skill_file" || exit 1
+              grep -q "^name:" "$skill_file" || exit 1
+              grep -q "^description:" "$skill_file" || exit 1
+              echo "✓ Verified $skill_file"
+            fi
+          done
+
+      - name: Package Plugin Archives
+        shell: bash
+        run: |
+          VERSION="${{ github.ref_name }}"
+          if [ -z "$VERSION" ] || [[ "$VERSION" != v* ]]; then
+            VERSION="${{ github.event.inputs.tag_name }}"
+          fi
+
+          mkdir -p dist
+          tar --exclude='./dist' --exclude='./.git' --exclude='./.github' -czf dist/tuquet-skills-${VERSION}.tar.gz .
+          zip -r dist/tuquet-skills-${VERSION}.zip . -x "./dist/*" -x "./.git/*" -x "./.github/*"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Tuquet Skills ${{ github.ref_name || github.event.inputs.tag_name }}
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+          files: |
+            dist/tuquet-skills-*.tar.gz
+            dist/tuquet-skills-*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send Telegram Notification
+        if: always()
+        uses: tuquet/bot@main
+        with:
+          bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat-id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          type: 'release'
+          tag: ${{ github.ref_name || github.event.inputs.tag_name }}
