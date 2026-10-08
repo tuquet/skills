@@ -19,12 +19,12 @@
    - Strictly reject upstream Chromium 150 (`150.0.7871.186`) due to open memory bugs in canvas readback (`SIGSEGV` / `Crashpad_NotConnectedToHandler` in `getImageData()`/`readPixels()`, GitHub Issues #94 & #95).
 
 5. **Version Switching & Profile Compatibility Mechanism**:
-   - Switching versions via `tuquet browser use <version>` updates the active version in `~/.specter/browser/browser.json`.
+   - Switching versions via `specter browser use <version>` updates the active version in `~/.specter/browser/browser.json`.
    - Existing sandboxes in `~/.specter/browser/profiles/` remain 100% functional.
    - Stale profile lock files (`SingletonLock`, `SingletonCookie`, `SingletonSocket`) are automatically purged before launch.
 
 6. **Network Mesh Integration**:
-   - Route browser network traffic through Tuquet Bridge (`--proxy-server=socks5://127.0.0.1:1080`).
+   - Route browser network traffic through Specter Bridge (`--proxy-server=socks5://127.0.0.1:1080`).
    - Always enforce `--disable-non-proxied-udp` when routing through proxies to eliminate real IP leaks via WebRTC STUN queries.
 
 ---
@@ -42,7 +42,7 @@
 | `--timezone="<tz>"` | `"Asia/Ho_Chi_Minh"`, `"UTC"` | Native C++ timezone override via `Intl.DateTimeFormat`. |
 | `--lang=<locale>` | `vi-VN`, `en-US` | Sets internal browser UI language. |
 | `--accept-lang=<locales>` | `vi-VN,vi,en-US,en` | HTTP `Accept-Language` header and `navigator.languages`. |
-| `--proxy-server="<proto>://<ip>:<port>"` | `socks5://127.0.0.1:1080` | Directs traffic through SOCKS5 proxy via `tuquet bridge`. |
+| `--proxy-server="<proto>://<ip>:<port>"` | `socks5://127.0.0.1:1080` | Directs traffic through SOCKS5 proxy via `specter bridge`. |
 | `--disable-non-proxied-udp` | *(Flag)* | Disables non-proxied UDP to prevent real IP leaks via WebRTC STUN. |
 | `--disable-spoofing=<list>` | `font,audio` | Selectively disables spoofing for specified subsystems. |
 | `--user-data-dir=<path>` | `~/.specter/browser/profiles/p1` | Absolute path to isolated profile directory. |

@@ -178,7 +178,7 @@ node scripts/link.mjs --agent claude --unlink --global
 
 | Skill | Module Code | Khả Năng & Kịch Bản Sử Dụng |
 | :--- | :---: | :--- |
-| [**`specter`**](./skills/specter/SKILL.md) | `cli/` | Master orchestrator, platform health dashboard (`specter status` hoặc `tuquet status`) và interactive shell. |
+| [**`specter`**](./skills/specter/SKILL.md) | `cli/` | Master orchestrator, platform health dashboard (`specter status`) và interactive shell. |
 | [**`specter-automa`**](./skills/specter-automa/SKILL.md) | `automa/` | Headless visual DAG engine, kiểm tra workflows JSON và SQLite local store. |
 | [**`specter-bot`**](./skills/specter-bot/SKILL.md) | `bot/` | Telegram ChatOps daemon lifecycle, giám sát tài nguyên VPS, và GitHub Actions alerts. |
 | [**`specter-bridge`**](./skills/specter-bridge/SKILL.md) | `cli/` | Điều khiển mesh tunnel đa VPS, proxy SOCKS5 (1080), HTTP (8118) và phân luồng Git. |

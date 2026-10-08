@@ -5,8 +5,7 @@
   "type": "module",
   "main": "./scripts/link.mjs",
   "bin": {
-    "specter-skills": "./bin/cli.mjs",
-    "tuquet-skills": "./bin/cli.mjs"
+    "specter-skills": "./bin/cli.mjs"
   },
   "files": [
     "skills",
