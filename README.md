@@ -138,10 +138,10 @@ Kiểm tra thư mục đích sau khi link:
 
 ```powershell
 # Link toàn bộ skills vào thư mục dự án
-node scripts/link.mjs --agent claude --project C:\path\to\your-project
+node scripts/link.mjs --agent claude --project ./my-project
 
 # Hoặc chỉ link riêng lẻ skill 'tuquet':
-node scripts/link.mjs --agent claude --project C:\path\to\your-project --skill tuquet
+node scripts/link.mjs --agent claude --project ./my-project --skill specter
 ```
 
 ---

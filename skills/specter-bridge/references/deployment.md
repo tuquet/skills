@@ -6,16 +6,16 @@ When deploying or rebuilding the bridge service locally on Windows:
 
 ```powershell
 # Step 1: Release Win32 binary locks
-tuquet bridge stop
+specter bridge stop
 
 # Step 2: Build and install latest CLI binary
 cargo install --path cli/
 
 # Step 3: Relaunch Bridge with required tunnels
-tuquet bridge start --ssh
+specter bridge start --ssh
 
 # Step 4: Smoke Test & Verify Status
-tuquet bridge status
+specter bridge status
 ```
 
 ---
