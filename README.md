@@ -6,11 +6,11 @@
   <p>
     <a href="https://antigravity.google/"><img src="https://img.shields.io/badge/Agent-Google%20Antigravity-4285F4.svg" alt="Google Antigravity" /></a>
     <a href="https://claude.ai/"><img src="https://img.shields.io/badge/CLI-Claude%20Code-D97706.svg" alt="Claude Code" /></a>
-    <a href="https://tuquet.github.io/docs/automation/ai-agent"><img src="https://img.shields.io/badge/Docs-VitePress%20Portal-blue.svg" alt="Documentation" /></a>
+    <a href="https://tuquet.github.io/docs/skills/"><img src="https://img.shields.io/badge/Docs-VitePress%20Portal-blue.svg" alt="Documentation" /></a>
     <a href="https://github.com/tuquet/scoop-bucket"><img src="https://img.shields.io/badge/Scoop-Available-brightgreen.svg" alt="Scoop" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
   </p>
-  <p><strong><a href="https://tuquet.github.io/docs/automation/ai-agent">📖 Read Full Documentation in Portal &rarr;</a> • <a href="https://github.com/tuquet/skills/blob/main/skills/specter-help/SKILL.md">⚡ Master Cheatsheet (`/specter-help`) &rarr;</a></strong></p>
+  <p><strong><a href="https://tuquet.github.io/docs/skills/">📖 Read Full Documentation in Portal &rarr;</a> • <a href="https://github.com/tuquet/skills/blob/main/skills/specter-help/SKILL.md">⚡ Master Cheatsheet (`/specter-help`) &rarr;</a></strong></p>
 </div>
 
 ---
@@ -208,7 +208,7 @@ Tài liệu hướng dẫn chi tiết tại [📖 `skills/herdr/SKILL.md`](./her
 
 Tài liệu toàn diện về thiết kế Atomic Skills, hợp đồng schema, và hướng dẫn tích hợp AI Agent:
 
-👉 **[https://tuquet.github.io/docs/automation/ai-agent](https://tuquet.github.io/docs/automation/ai-agent)**
+👉 **[https://tuquet.github.io/docs/skills/](https://tuquet.github.io/docs/skills/)**
 
 ---
 
