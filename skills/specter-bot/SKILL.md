@@ -1,14 +1,14 @@
 ---
-name: tuquet-bot
+name: specter-bot
 description: >
   Telegram ChatOps assistant daemon, server health monitoring, and GitHub Actions notification engine.
-  Trigger: /tuquet-bot, "tuquet bot", "telegram bot", "bot status", "bot logs", "restart bot", "bot test".
-  Do NOT use for editing workflow JSON (use /tuquet-automa) or cloud database migrations (use /tuquet-cloud).
+  Trigger: /specter-bot, "specter bot", "telegram bot", "bot status", "bot logs", "restart bot", "bot test".
+  Do NOT use for editing workflow JSON (use /specter-automa) or cloud database migrations (use /specter-cloud).
 argument-hint: "[status|logs|restart|test|run|deploy]"
 license: MIT
 ---
 
-# Tuquet Telegram Bot & ChatOps (`tuquet-bot`)
+# Specter Telegram Bot & ChatOps (`tuquet-bot`)
 
 Telegram ChatOps and infrastructure health daemon. Monitors Linux VPS resources, triggers website deployments, and routes GitHub Actions notifications.
 
@@ -72,6 +72,6 @@ Verdict: Bot active & listening. / Offline: run 'telegram-bot restart'.
 
 Scope: Telegram daemon lifecycle, local test execution, ChatOps command dispatch, and GitHub Actions notification syntax.
 - Do NOT expose or commit `TELEGRAM_BOT_TOKEN` in git.
-- Do NOT edit Automa workflow JSON (use `/tuquet-automa`).
-- Do NOT run database migrations (use `/tuquet-cloud`).
+- Do NOT edit Automa workflow JSON (use `/specter-automa`).
+- Do NOT run database migrations (use `/specter-cloud`).
 - One-shot execution.

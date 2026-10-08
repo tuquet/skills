@@ -1,15 +1,15 @@
 ---
-name: tuquet-security
+name: specter-security
 description: >
   Enterprise standard and autonomous runbook for cloud server hardening,
   Zero-Trust network offloading (Zero open inbound ports), cryptographic SSH enforcement,
-  and proactive disk failure prevention. Trigger: /tuquet-security, "tuquet security",
+  and proactive disk failure prevention. Trigger: /specter-security, "specter security",
   "vps security", "harden server", "zero open ports", "disk resilience".
 argument-hint: "[audit|harden|check-ports]"
 license: MIT
 ---
 
-# Tuquet Security Standard (`tuquet-security`)
+# Specter Security Standard (`tuquet-security`)
 
 Paranoid cloud defense. Zero open inbound ports. Key-only auth. Disk lockup prevention. Eliminates automated port scanners and unexpected node outages.
 
@@ -18,7 +18,7 @@ Paranoid cloud defense. Zero open inbound ports. Key-only auth. Disk lockup prev
 1. **Zero Open Inbound Ports**: Public network interfaces accept NO direct incoming traffic. Inbound routes strictly via Cloudflare Tunnels (Zero Trust). Services bind to `127.0.0.1`.
 2. **Key-Only Authentication**: Passwords disabled. Strictly enforce Ed25519 or ECDSA keys.
 3. **Proactive Disk Resilience**: Automated log rotation and journal trimming. Alert before disk utilization crosses 80%.
-4. **Outbound-Only Mesh**: Local access to services traverses encrypted reverse tunnels via `tuquet bridge`.
+4. **Outbound-Only Mesh**: Local access to services traverses encrypted reverse tunnels via `specter bridge`.
 
 ## Commands
 

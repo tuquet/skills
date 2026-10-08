@@ -17,7 +17,9 @@ const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
 const SKILLS_DIR = path.join(REPO_ROOT, 'skills');
 const README_PATH = path.join(REPO_ROOT, 'README.md');
-const HELP_SKILL_PATH = path.join(SKILLS_DIR, 'tuquet-help', 'SKILL.md');
+const HELP_SKILL_PATH = fs.existsSync(path.join(SKILLS_DIR, 'specter-help', 'SKILL.md'))
+  ? path.join(SKILLS_DIR, 'specter-help', 'SKILL.md')
+  : path.join(SKILLS_DIR, 'tuquet-help', 'SKILL.md');
 
 function parseSkillFrontmatter(content) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);

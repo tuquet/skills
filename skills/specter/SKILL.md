@@ -1,14 +1,14 @@
 ---
-name: tuquet
+name: specter
 description: >
-  Master orchestrator and platform health dashboard (`tuquet status`). Inspects
+  Master orchestrator and platform health dashboard (`specter status`). Inspects
   SSOT root `~/.specter/`, machine identity, active listeners, and database state.
-  Trigger: /tuquet, "tuquet status", "tuquet health", "platform status", "check tuquet".
+  Trigger: /specter, "specter status", "tuquet health", "platform status", "check tuquet".
 argument-hint: "[status|dashboard]"
 license: MIT
 ---
 
-# Tuquet Platform Health (`tuquet`)
+# Specter Platform Health (`tuquet`)
 
 Zero fluff. Holistic platform heartbeat in one glance. Inspects all services, machine identity, and canonical storage pillars under `~/.specter/`.
 
@@ -24,7 +24,7 @@ Check state in order:
 
 Run holistic diagnostics:
 ```powershell
-$ErrorActionPreference = 'SilentlyContinue'; tuquet status
+$ErrorActionPreference = 'SilentlyContinue'; specter status
 ```
 
 Or verify local SSOT directories directly:
@@ -42,7 +42,7 @@ Report strictly in this format:
 [AUTOMA] Workflows: <N> | SQLite: <OK|ERR>
 [BROWSER] Chromium: <READY|MISSING> (<version>)
 [RUNNER] Daemon: <ACTIVE|INACTIVE>
-Verdict: All systems nominal. Ship. / <N> service(s) degraded. Run /tuquet-<service> to fix.
+Verdict: All systems nominal. Ship. / <N> service(s) degraded. Run /specter-<service> to fix.
 ```
 
 ## Interactive Shell
@@ -56,4 +56,4 @@ tuquet
 
 ## Boundaries
 
-One-shot report, changes nothing. Do not restart services automatically without user prompt. To fix an individual subsystem, invoke its dedicated skill (`/tuquet-bridge`, `/tuquet-browser`, `/tuquet-automa`).
+One-shot report, changes nothing. Do not restart services automatically without user prompt. To fix an individual subsystem, invoke its dedicated skill (`/specter-bridge`, `/specter-browser`, `/specter-automa`).

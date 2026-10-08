@@ -1,8 +1,8 @@
 ---
-name: tuquet-automa
+name: specter-automa
 description: >
   Headless automation runner and visual DAG engine for browser tasks via native CDP and local SQLite store.
-  Trigger: /tuquet-automa, "tuquet automa", "run workflow", "inspect workflow", "automa studio".
+  Trigger: /specter-automa, "specter automa", "run workflow", "inspect workflow", "automa studio".
 argument-hint: "[run|list|inspect|studio] [workflow.json]"
 license: MIT
 ---
@@ -22,16 +22,16 @@ Read native source definitions on demand:
 
 ```powershell
 # 1. List workflows in local vault (~/.specter/automa/workflows/)
-tuquet automa list
+specter automa list
 
 # 2. Execute workflow headlessly with timeout
-tuquet automa run ./workflows/my_flow.json --headless --timeout 60
+specter automa run ./workflows/my_flow.json --headless --timeout 60
 
 # 3. Validate workflow DAG syntax without browser execution
-tuquet automa inspect ./workflows/my_flow.json
+specter automa inspect ./workflows/my_flow.json
 
 # 4. Launch visual drag-and-drop studio in browser
-tuquet automa studio
+specter automa studio
 ```
 
 ## Storage Pillar

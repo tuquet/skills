@@ -1,8 +1,8 @@
 ---
-name: tuquet-browser
+name: specter-browser
 description: >
   Manage Antidetect Chromium runtimes, hardware emulation seeds, profile sandboxes, and proxy routing.
-  Trigger: /tuquet-browser, "tuquet browser", "install chromium", "stealth browser", "clean browser".
+  Trigger: /specter-browser, "specter browser", "install chromium", "stealth browser", "clean browser".
 argument-hint: "[status|install|list|use|clean|path]"
 license: MIT
 ---
@@ -23,20 +23,20 @@ Read native source definitions on demand:
 
 ```powershell
 # 1. Inspect installed runtimes, active version, and sandbox count
-tuquet browser status
+specter browser status
 
 # 2. List available versions or install golden LTS v148
-tuquet browser list
-tuquet browser install 148
+specter browser list
+specter browser install 148
 
 # 3. Switch active runtime version
-tuquet browser use 148
+specter browser use 148
 
 # 4. Print raw executable path for automation drivers
-tuquet browser path
+specter browser path
 
 # 5. Clean caches & purge stale profile locks
-tuquet browser clean
+specter browser clean
 ```
 
 ## Output Contract
@@ -49,7 +49,7 @@ Report status strictly:
 • Sandboxes: <N> profiles in ~/.specter/browser/profiles/
 • Stealth:   <Active | Missing>
 • Network:   <Direct | SOCKS5 Proxy 127.0.0.1:1080>
-Verdict: Stealth Engine operational. / Missing: run 'tuquet browser install'.
+Verdict: Stealth Engine operational. / Missing: run 'specter browser install'.
 ```
 
 ## Boundaries

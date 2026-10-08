@@ -1,14 +1,14 @@
 ---
-name: tuquet-cicd
+name: specter-cicd
 description: >
   CI/CD pipeline orchestration, local pre-flight gatekeeping, semantic version tagging, and GitHub Actions budget control.
-  Trigger: /tuquet-cicd, "tuquet cicd", "cicd", "tuquet release", "release plan", "preflight check", "cut release", "ship release", "ci budget".
-  Do NOT use for editing workflow JSON (use /tuquet-automa) or cloud database migrations (use /tuquet-cloud).
+  Trigger: /specter-cicd, "specter cicd", "cicd", "tuquet release", "release plan", "preflight check", "cut release", "ship release", "ci budget".
+  Do NOT use for editing workflow JSON (use /specter-automa) or cloud database migrations (use /specter-cloud).
 argument-hint: "[preflight|plan|tag|status|dispatch] [repo] [version]"
 license: MIT
 ---
 
-# Tuquet CI/CD & Release Pipeline (`tuquet-cicd`)
+# Specter CI/CD & Release Pipeline (`tuquet-cicd`)
 
 Deterministic release pipeline and zero-waste CI gatekeeper. Enforces local verification before tag creation to eliminate broken builds and conserve GitHub Actions minutes.
 

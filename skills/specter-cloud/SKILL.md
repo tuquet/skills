@@ -1,8 +1,8 @@
 ---
-name: tuquet-cloud
+name: specter-cloud
 description: >
   Manage Tuquet Cloud control plane, device fleet enrollment, and Supabase database migrations.
-  Trigger: /tuquet-cloud, "tuquet cloud", "cloud login", "cloud status", "supabase db push".
+  Trigger: /specter-cloud, "specter cloud", "cloud login", "cloud status", "supabase db push".
 argument-hint: "[whoami|login|logout|config|db]"
 license: MIT
 ---
@@ -23,19 +23,19 @@ Read native source definitions on demand:
 
 ```powershell
 # 1. Check enrollment identity & tenant status
-tuquet cloud whoami
+specter cloud whoami
 
 # 2. Authenticate & enroll workstation into cloud fleet
-tuquet cloud login --url https://<project>.supabase.co --token <enrollment_token> --name <device_name>
+specter cloud login --url https://<project>.supabase.co --token <enrollment_token> --name <device_name>
 
 # 3. Disconnect workstation from cloud fleet
-tuquet cloud logout
+specter cloud logout
 
 # 4. View system & cloud endpoint configuration
-tuquet cloud config --show
+specter cloud config --show
 
 # 5. Remote Supabase DB Migrations (Requires HTTP bridge 8118)
-tuquet bridge start my-vps --http
+specter bridge start my-vps --http
 $env:HTTP_PROXY = "http://127.0.0.1:8118"; $env:HTTPS_PROXY = "http://127.0.0.1:8118"
 supabase db push
 ```
@@ -48,7 +48,7 @@ Report status strictly:
 • Tenant:   <tenant_id> | Endpoint: <cloud_url>
 • Session:  <ENROLLED (PROD)|DISCONNECTED>
 • Identity: ~/.specter/system/.identity.json
-Verdict: Paired with cloud fleet. / Disconnected: run 'tuquet cloud login'.
+Verdict: Paired with cloud fleet. / Disconnected: run 'specter cloud login'.
 ```
 
 ## Boundaries

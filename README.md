@@ -20,17 +20,17 @@
 Plugin đóng gói sẵn:
 1. **Bộ Skills Chuẩn hóa Atomic (`tuquet-*`)**:
 <!-- SKILLS_CATALOG_START -->
-   - [**`tuquet`**](./skills/tuquet/SKILL.md) (`/tuquet`): Master orchestrator and platform health dashboard (`tuquet status`).
-   - [**`tuquet-automa`**](./skills/tuquet-automa/SKILL.md) (`/tuquet-automa`): Headless automation runner and visual DAG engine for browser tasks via native CDP and local SQLite store.
-   - [**`tuquet-bot`**](./skills/tuquet-bot/SKILL.md) (`/tuquet-bot`): Telegram ChatOps assistant daemon, server health monitoring, and GitHub Actions notification engine.
-   - [**`tuquet-bridge`**](./skills/tuquet-bridge/SKILL.md) (`/tuquet-bridge`): Manage network bridge tunnels, SOCKS5 proxy (1080), HTTP adapter (8118), and local SSH (2222).
-   - [**`tuquet-browser`**](./skills/tuquet-browser/SKILL.md) (`/tuquet-browser`): Manage Antidetect Chromium runtimes, hardware emulation seeds, profile sandboxes, and proxy routing.
-   - [**`tuquet-cicd`**](./skills/tuquet-cicd/SKILL.md) (`/tuquet-cicd`): CI/CD pipeline orchestration, local pre-flight gatekeeping, semantic version tagging, and GitHub Actions budget control.
-   - [**`tuquet-cloud`**](./skills/tuquet-cloud/SKILL.md) (`/tuquet-cloud`): Manage Tuquet Cloud control plane, device fleet enrollment, and Supabase database migrations.
-   - [**`tuquet-faker`**](./skills/tuquet-faker/SKILL.md) (`/tuquet-faker`): Synthetic persona generator with compliant Vietnamese CCCD validation,.
-   - [**`tuquet-help`**](./skills/tuquet-help/SKILL.md) (`/tuquet-help`): Quick-reference card and master cheatsheet for all Tuquet CLI commands, interactive shell scopes,.
-   - [**`tuquet-runner`**](./skills/tuquet-runner/SKILL.md) (`/tuquet-runner`): Kernel-level Win32 Job Object supervisor & daemon controller (port 8765).
-   - [**`tuquet-security`**](./skills/tuquet-security/SKILL.md) (`/tuquet-security`): Enterprise standard and autonomous runbook for cloud server hardening,.
+   - [**`specter`**](./skills/specter/SKILL.md) (`/specter`): Master orchestrator and platform health dashboard (`specter status`).
+   - [**`specter-automa`**](./skills/specter-automa/SKILL.md) (`/specter-automa`): Headless automation runner and visual DAG engine for browser tasks via native CDP and local SQLite store.
+   - [**`specter-bot`**](./skills/specter-bot/SKILL.md) (`/specter-bot`): Telegram ChatOps assistant daemon, server health monitoring, and GitHub Actions notification engine.
+   - [**`specter-bridge`**](./skills/specter-bridge/SKILL.md) (`/specter-bridge`): Manage network bridge tunnels, SOCKS5 proxy (1080), HTTP adapter (8118), and local SSH (2222).
+   - [**`specter-browser`**](./skills/specter-browser/SKILL.md) (`/specter-browser`): Manage Antidetect Chromium runtimes, hardware emulation seeds, profile sandboxes, and proxy routing.
+   - [**`specter-cicd`**](./skills/specter-cicd/SKILL.md) (`/specter-cicd`): CI/CD pipeline orchestration, local pre-flight gatekeeping, semantic version tagging, and GitHub Actions budget control.
+   - [**`specter-cloud`**](./skills/specter-cloud/SKILL.md) (`/specter-cloud`): Manage Tuquet Cloud control plane, device fleet enrollment, and Supabase database migrations.
+   - [**`specter-faker`**](./skills/specter-faker/SKILL.md) (`/specter-faker`): Synthetic persona generator with compliant Vietnamese CCCD validation,.
+   - [**`specter-help`**](./skills/specter-help/SKILL.md) (`/specter-help`): Quick-reference card and master cheatsheet for all Tuquet CLI commands, interactive shell scopes,.
+   - [**`specter-runner`**](./skills/specter-runner/SKILL.md) (`/specter-runner`): Kernel-level Win32 Job Object supervisor & daemon controller (port 8765).
+   - [**`specter-security`**](./skills/specter-security/SKILL.md) (`/specter-security`): Enterprise standard and autonomous runbook for cloud server hardening,.
 <!-- SKILLS_CATALOG_END -->
 2. **Kiến trúc Quy tắc Tự động & Di động Đa Máy (`rules/AGENTS.md`)**:
    - Tự động nạp quy tắc Single Source of Truth (SSOT tại `~/.specter/`) và guardrail phân luồng mạng (git pull đi thẳng, git push qua proxy) vào mọi phiên làm việc của AI Agent trên bất kỳ máy tính nào mà không cần cấu hình thủ công.
