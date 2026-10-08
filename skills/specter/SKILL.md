@@ -49,7 +49,7 @@ Verdict: All systems nominal. Ship. / <N> service(s) degraded. Run /specter-<ser
 
 Launch the interactive REPL shell:
 ```powershell
-tuquet
+specter
 ```
 - Switch: `use bridge`, `use automa`, `use browser`, `use runner`, `use faker`, `use cloud`.
 - Exit: `exit` or `back`.

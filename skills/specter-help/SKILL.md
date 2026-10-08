@@ -1,9 +1,9 @@
 ---
 name: specter-help
 description: >
-  Quick-reference card and master cheatsheet for all Tuquet CLI commands, interactive shell scopes,
+  Quick-reference card and master cheatsheet for all Specter CLI commands, interactive shell scopes,
   and canonical SSOT microservice pillars under ~/.specter/. One-shot display.
-  Trigger: /specter-help, "tuquet help", "what tuquet commands", "how do I use tuquet", "tuquet cheatsheet".
+  Trigger: /specter-help, "specter help", "what specter commands", "how do I use specter", "specter cheatsheet".
 argument-hint: ""
 license: MIT
 ---
@@ -25,7 +25,7 @@ One card. Zero fluff. All commands, interactive REPL scopes, and SSOT pillars. D
 | **specter-cicd** | `/specter-cicd` | `[preflight\|plan\|tag\|status\|dispatch] [repo] [version]` | CI/CD pipeline orchestration, local pre-flight gatekeeping, semantic version tagging, and GitHub Actions budget control. |
 | **specter-cloud** | `/specter-cloud` | `[whoami\|login\|logout\|config\|db]` | Manage Tuquet Cloud control plane, device fleet enrollment, and Supabase database migrations. |
 | **specter-faker** | `/specter-faker` | `[generate\|card\|config] [-n count] [-d domain]` | Synthetic persona generator with compliant Vietnamese CCCD validation,. |
-| **specter-help** | `/specter-help` | *(None)* | Quick-reference card and master cheatsheet for all Tuquet CLI commands, interactive shell scopes,. |
+| **specter-help** | `/specter-help` | *(None)* | Quick-reference card and master cheatsheet for all Specter CLI commands, interactive shell scopes,. |
 | **specter-runner** | `/specter-runner` | `[status\|start\|stop\|restart\|logs\|probe]` | Kernel-level Win32 Job Object supervisor & daemon controller (port 8765). |
 | **specter-security** | `/specter-security` | `[audit\|harden\|check-ports]` | Enterprise standard and autonomous runbook for cloud server hardening,. |
 <!-- SKILLS_CATALOG_END -->
@@ -87,10 +87,10 @@ specter shell [scope]                   # Launch interactive REPL directly in ta
 
 Launch interactive shell: `specter`
 ```text
-tuquet> use bridge        # Switch to bridge scope
-tuquet(bridge)> start     # Start default VPS bridge
-tuquet(bridge)> back      # Return to root shell
-tuquet> exit              # Exit shell
+specter> use bridge        # Switch to bridge scope
+specter(bridge)> start     # Start default VPS bridge
+specter(bridge)> back      # Return to root shell
+specter> exit              # Exit shell
 ```
 
 ### REPL Shortcuts
@@ -102,7 +102,7 @@ tuquet> exit              # Exit shell
 | `exit` / `quit` | Exit sub-scope (or exit CLI if in Global) | `exit` or `Ctrl+D` |
 | `clear` / `cls` | Clear terminal screen | `clear` |
 | `Tab` | Context-aware autocompletion | Auto-scans workflows in `~/.specter/automa/workflows/` |
-| **Prefix Tolerance** | Inside `tuquet(bridge)>`, both `status` and `bridge status` work identically |
+| **Prefix Tolerance** | Inside `specter(bridge)>`, both `status` and `bridge status` work identically |
 
 ## SSOT 5 Pillars (`~/.specter/`)
 
@@ -116,3 +116,4 @@ All ecosystem data resolves strictly to:
 ## Boundaries
 
 One-shot report, changes nothing. Do not write flags, alter files, or modify system configuration.
+

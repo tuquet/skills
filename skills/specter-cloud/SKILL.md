@@ -1,7 +1,7 @@
 ---
 name: specter-cloud
 description: >
-  Manage Tuquet Cloud control plane, device fleet enrollment, and Supabase database migrations.
+  Manage Specter Cloud control plane, device fleet enrollment, and Supabase database migrations.
   Trigger: /specter-cloud, "specter cloud", "cloud login", "cloud status", "supabase db push".
 argument-hint: "[whoami|login|logout|config|db]"
 license: MIT
