@@ -98,6 +98,7 @@ Tuquet Skills Linker (Zero-Dependency Node.js)
 
 Usage:
   node scripts/link.mjs [options]
+  specter-skills link [options]
   tuquet-skills link [options]
 
 Options:

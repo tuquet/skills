@@ -178,17 +178,17 @@ node scripts/link.mjs --agent claude --unlink --global
 
 | Skill | Module Code | Khả Năng & Kịch Bản Sử Dụng |
 | :--- | :---: | :--- |
-| [**`tuquet`**](./skills/specter/SKILL.md) | `cli/` | Master orchestrator, platform health dashboard (`tuquet status`) và interactive shell. |
-| [**`tuquet-automa`**](./skills/specter-automa/SKILL.md) | `automa/` | Headless visual DAG engine, kiểm tra workflows JSON và SQLite local store. |
-| [**`tuquet-bot`**](./skills/specter-bot/SKILL.md) | `bot/` | Telegram ChatOps daemon lifecycle, giám sát tài nguyên VPS, và GitHub Actions alerts. |
-| [**`tuquet-bridge`**](./skills/specter-bridge/SKILL.md) | `cli/` | Điều khiển mesh tunnel đa VPS, proxy SOCKS5 (1080), HTTP (8118) và phân luồng Git. |
-| [**`tuquet-browser`**](./skills/specter-browser/SKILL.md) | `browser/` | Quản lý Chromium LTS runtime, profile sandboxing cô lập và anti-detect defenses. |
-| [**`tuquet-cloud`**](./skills/specter-cloud/SKILL.md) | `cloud/` | Điều phối cloud control plane, fleet device enrollment và Supabase migrations. |
-| [**`tuquet-faker`**](./skills/specter-faker/SKILL.md) | `faker/` | Sinh dữ liệu danh tính mẫu (Mock Persona), định danh thuật toán Modulo 11 và email pool. |
-| [**`tuquet-cicd`**](./skills/specter-cicd/SKILL.md) | Standard | Điều phối pipeline CI/CD, gatekeeper kiểm thử cục bộ và tối ưu hóa thời gian build. |
-| [**`tuquet-runner`**](./skills/specter-runner/SKILL.md) | `runner/` | Giám sát tiến trình daemon nền cổng 8765, cam kết Zero-Zombie qua Win32 Job Object. |
-| [**`tuquet-security`**](./skills/specter-security/SKILL.md) | Security | Hardening máy chủ, Zero-Trust network offloading và tự động phòng ngừa tràn ổ cứng. |
-| [**`tuquet-help`**](./skills/specter-help/SKILL.md) | Help | Tra cứu nhanh cheatsheet toàn bộ lệnh CLI và 5 Pillars microservice SSOT. |
+| [**`specter`**](./skills/specter/SKILL.md) | `cli/` | Master orchestrator, platform health dashboard (`specter status` hoặc `tuquet status`) và interactive shell. |
+| [**`specter-automa`**](./skills/specter-automa/SKILL.md) | `automa/` | Headless visual DAG engine, kiểm tra workflows JSON và SQLite local store. |
+| [**`specter-bot`**](./skills/specter-bot/SKILL.md) | `bot/` | Telegram ChatOps daemon lifecycle, giám sát tài nguyên VPS, và GitHub Actions alerts. |
+| [**`specter-bridge`**](./skills/specter-bridge/SKILL.md) | `cli/` | Điều khiển mesh tunnel đa VPS, proxy SOCKS5 (1080), HTTP (8118) và phân luồng Git. |
+| [**`specter-browser`**](./skills/specter-browser/SKILL.md) | `browser/` | Quản lý Chromium LTS runtime, profile sandboxing cô lập và anti-detect defenses. |
+| [**`specter-cloud`**](./skills/specter-cloud/SKILL.md) | `cloud/` | Điều phối cloud control plane, fleet device enrollment và Supabase migrations. |
+| [**`specter-faker`**](./skills/specter-faker/SKILL.md) | `faker/` | Sinh dữ liệu danh tính mẫu (Mock Persona), định danh thuật toán Modulo 11 và email pool. |
+| [**`specter-cicd`**](./skills/specter-cicd/SKILL.md) | Standard | Điều phối pipeline CI/CD, gatekeeper kiểm thử cục bộ và tối ưu hóa thời gian build. |
+| [**`specter-runner`**](./skills/specter-runner/SKILL.md) | `runner/` | Giám sát tiến trình daemon nền cổng 8765, cam kết Zero-Zombie qua Win32 Job Object. |
+| [**`specter-security`**](./skills/specter-security/SKILL.md) | Security | Hardening máy chủ, Zero-Trust network offloading và tự động phòng ngừa tràn ổ cứng. |
+| [**`specter-help`**](./skills/specter-help/SKILL.md) | Help | Tra cứu nhanh cheatsheet toàn bộ lệnh CLI và 5 Pillars microservice SSOT. |
 | [**`herdr`**](./herdr/SKILL.md) | Agent Runtime | Terminal multiplexer cho AI Agent: điều khiển layout workspace/tab/pane và giám sát lifecycle (`idle`, `working`, `blocked`, `done`). |
 
 ### 🖥️ Kỹ Năng Terminal Multiplexer & Agent Runtime (`herdr`)

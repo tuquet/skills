@@ -4,7 +4,7 @@
  * Tuquet Skills Catalog Generator & SSOT Synchronizer
  *
  * Scans `skills/` directory, extracts frontmatter metadata, and automatically
- * updates the Skills Catalog table in README.md and tuquet-help/SKILL.md.
+ * updates the Skills Catalog table in README.md and specter-help/SKILL.md.
  * Eliminates parallel manual markdown table maintenance completely.
  */
 
@@ -17,9 +17,7 @@ const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
 const SKILLS_DIR = path.join(REPO_ROOT, 'skills');
 const README_PATH = path.join(REPO_ROOT, 'README.md');
-const HELP_SKILL_PATH = fs.existsSync(path.join(SKILLS_DIR, 'specter-help', 'SKILL.md'))
-  ? path.join(SKILLS_DIR, 'specter-help', 'SKILL.md')
-  : path.join(SKILLS_DIR, 'tuquet-help', 'SKILL.md');
+const HELP_SKILL_PATH = path.join(SKILLS_DIR, 'specter-help', 'SKILL.md');
 
 function parseSkillFrontmatter(content) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -64,10 +62,10 @@ function getSkills() {
     }
   }
 
-  // Sort: 'tuquet' first, then alphabetical
+  // Sort: 'specter' first, then alphabetical
   skills.sort((a, b) => {
-    if (a.name === 'tuquet') return -1;
-    if (b.name === 'tuquet') return 1;
+    if (a.name === 'specter') return -1;
+    if (b.name === 'specter') return 1;
     return a.name.localeCompare(b.name);
   });
 
@@ -135,7 +133,7 @@ function main() {
 
   let changed = false;
 
-  // 1. Update tuquet-help/SKILL.md table
+  // 1. Update specter-help/SKILL.md table
   if (fs.existsSync(HELP_SKILL_PATH)) {
     const helpContent = fs.readFileSync(HELP_SKILL_PATH, 'utf8');
     if (!helpContent.includes(startMarker)) {
