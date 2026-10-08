@@ -81,16 +81,24 @@ agy plugin status tuquet
 
 ---
 
-### 2. Cài đặt trên máy tính mới (Multi-PC Setup)
-Khi chuyển sang một máy tính mới, chỉ cần 1 lệnh duy nhất để tải về toàn bộ Skills và Rules:
+### 2. Cài đặt trên máy tính mới (Multi-PC Universal Setup)
+Khi chuyển sang một máy tính mới, chỉ cần chạy 1 lệnh duy nhất để tự động thiết lập toàn bộ hệ sinh thái Skills, Plugins và Native MCP Server cho tất cả Agent (Antigravity, Claude Code, Cursor):
 
 ```bash
-# Cài đặt trực tiếp từ GitHub repository chính thức:
-agy plugin install https://github.com/tuquet/skills
+# Clone repository skills:
+git clone https://github.com/tuquet/skills.git
+cd skills
 
-# Hoặc cài đặt/link từ thư mục local trong quá trình phát triển:
-agy plugin install ~/Repository/tuquet/skills
+# Chạy lệnh thiết lập toàn diện tự động (Zero Dependency):
+pnpm setup   # Hoặc: npm run setup / node scripts/setup.mjs
 ```
+
+**Quá trình trên sẽ tự động thực hiện:**
+1. **Gemini / Antigravity Plugins**: Liên kết plugin `tuquet` & `specter` vào `~/.gemini/config/plugins/`.
+2. **Addy Osmani Agent Skills**: Tự động clone & kích hoạt plugin `agent-skills` (25 production skills và các custom command `/review`, `/ship`, `/spec`,...).
+3. **Specter MCP Server**: Đăng ký MCP server `specter` vào `~/.gemini/config/mcp_config.json`.
+4. **Specter MCP Schemas**: Cài đặt 9 schema công cụ (`specter_*`) vào `~/.gemini/antigravity/mcp/specter/`.
+5. **Universal Agent Linking**: Đồng bộ toàn bộ skills sang `~/.gemini/config/skills/`, `~/.claude/skills/`, `~/.cursor/skills/`, và `~/.agents/skills/`.
 
 ---
 
