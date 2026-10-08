@@ -7,7 +7,7 @@ argument-hint: "[status|start|stop|deploy|check] [server]"
 license: MIT
 ---
 
-# Specter Network Bridge (`tuquet-bridge`)
+# Specter Network Bridge (`specter-bridge`)
 
 Controls encrypted egress tunnels, SOCKS5 proxy (1080), HTTP-to-SOCKS5 adapter (8118), and local SSH port forwarding (2222). Workstation outbound firewall blocks direct `git push`; always route via bridge.
 

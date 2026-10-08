@@ -7,7 +7,7 @@ argument-hint: "[status|start|stop|restart|logs|probe]"
 license: MIT
 ---
 
-# Specter Process Supervisor (`tuquet-runner`)
+# Specter Process Supervisor (`specter-runner`)
 
 Zero-zombie kernel supervisor. Spawns, monitors, and terminates background worker daemons on port 8765 bound to Win32 Job Objects.
 

@@ -9,7 +9,7 @@ argument-hint: "[audit|harden|check-ports]"
 license: MIT
 ---
 
-# Specter Security Standard (`tuquet-security`)
+# Specter Security Standard (`specter-security`)
 
 Paranoid cloud defense. Zero open inbound ports. Key-only auth. Disk lockup prevention. Eliminates automated port scanners and unexpected node outages.
 

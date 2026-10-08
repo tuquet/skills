@@ -162,7 +162,7 @@ function main() {
       const listRegex = /1\. \*\*Bộ Skills[\s\S]*?(?=\n2\. \*\*Kiến trúc)/;
       const injected = readmeContent.replace(
         listRegex,
-        `1. **Bộ Skills Chuẩn hóa Atomic (\`tuquet-*\`)**:\n${startMarker}\n${list}\n${endMarker}`
+        `1. **Bộ Skills Chuẩn hóa Atomic (\`specter-*\`)**:\n${startMarker}\n${list}\n${endMarker}`
       );
       fs.writeFileSync(README_PATH, injected, 'utf8');
       console.log(`  ✓ Injected catalog markers and updated: ${path.relative(REPO_ROOT, README_PATH)}`);

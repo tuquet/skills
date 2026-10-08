@@ -7,7 +7,7 @@ argument-hint: "[status|install|list|use|clean|path]"
 license: MIT
 ---
 
-# Tuquet Browser Sandbox (`tuquet-browser`)
+# Specter Browser Sandbox (`specter-browser`)
 
 Dedicated Antidetect Chromium v148 LTS runtime manager. Isolated profile sandboxes and deterministic hardware fingerprinting with zero identity bleed.
 

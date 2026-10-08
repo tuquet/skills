@@ -8,7 +8,7 @@ argument-hint: "[preflight|plan|tag|status|dispatch] [repo] [version]"
 license: MIT
 ---
 
-# Specter CI/CD & Release Pipeline (`tuquet-cicd`)
+# Specter CI/CD & Release Pipeline (`specter-cicd`)
 
 Deterministic release pipeline and zero-waste CI gatekeeper. Enforces local verification before tag creation to eliminate broken builds and conserve GitHub Actions minutes.
 

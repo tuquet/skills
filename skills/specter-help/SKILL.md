@@ -8,7 +8,7 @@ argument-hint: ""
 license: MIT
 ---
 
-# Tuquet Master Cheatsheet & Help Card (`tuquet-help`)
+# Specter Master Cheatsheet & Help Card (`specter-help`)
 
 One card. Zero fluff. All commands, interactive REPL scopes, and SSOT pillars. Display this reference card when invoked. One-shot, changes nothing.
 
@@ -85,7 +85,7 @@ specter shell [scope]                   # Launch interactive REPL directly in ta
 
 ## Interactive Scoped REPL
 
-Launch interactive shell: `tuquet`
+Launch interactive shell: `specter`
 ```text
 tuquet> use bridge        # Switch to bridge scope
 tuquet(bridge)> start     # Start default VPS bridge

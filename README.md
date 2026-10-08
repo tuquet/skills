@@ -18,7 +18,7 @@
 `tuquet` là **Master Plugin** chính thức của hệ sinh thái Tuquet dành cho các trợ lý lập trình AI (**Google Antigravity CLI/IDE**, **Anthropic Claude Code CLI**, **Cursor**, **Codex**).
 
 Plugin đóng gói sẵn:
-1. **Bộ Skills Chuẩn hóa Atomic (`tuquet-*`)**:
+1. **Bộ Skills Chuẩn hóa Atomic (`specter-*`)**:
 <!-- SKILLS_CATALOG_START -->
    - [**`specter`**](./skills/specter/SKILL.md) (`/specter`): Master orchestrator and platform health dashboard (`specter status`).
    - [**`specter-automa`**](./skills/specter-automa/SKILL.md) (`/specter-automa`): Headless automation runner and visual DAG engine for browser tasks via native CDP and local SQLite store.
@@ -51,17 +51,17 @@ Thư mục plugin này nằm tại:
 ├── scripts/
 │   └── link.mjs      # Công cụ đồng bộ cho Claude Code / Cursor
 └── skills/
-    ├── tuquet/SKILL.md
-    ├── tuquet-automa/SKILL.md
-    ├── tuquet-bot/SKILL.md
-    ├── tuquet-bridge/SKILL.md
-    ├── tuquet-browser/SKILL.md
-    ├── tuquet-cicd/SKILL.md
-    ├── tuquet-cloud/SKILL.md
-    ├── tuquet-faker/SKILL.md
-    ├── tuquet-help/SKILL.md
-    ├── tuquet-runner/SKILL.md
-    └── tuquet-security/SKILL.md
+    ├── specter/SKILL.md
+    ├── specter-automa/SKILL.md
+    ├── specter-bot/SKILL.md
+    ├── specter-bridge/SKILL.md
+    ├── specter-browser/SKILL.md
+    ├── specter-cicd/SKILL.md
+    ├── specter-cloud/SKILL.md
+    ├── specter-faker/SKILL.md
+    ├── specter-help/SKILL.md
+    ├── specter-runner/SKILL.md
+    └── specter-security/SKILL.md
 ```
 
 #### Quản lý bằng lệnh Antigravity CLI (`agy`):
@@ -127,8 +127,8 @@ node scripts/link.mjs --agent claude --global
 Kiểm tra thư mục đích sau khi link:
 ```
 ~/.claude/skills/
-├── tuquet/SKILL.md
-└── tuquet-security/SKILL.md
+├── specter/SKILL.md
+└── specter-security/SKILL.md
 ```
 
 ---
@@ -178,17 +178,17 @@ node scripts/link.mjs --agent claude --unlink --global
 
 | Skill | Module Code | Khả Năng & Kịch Bản Sử Dụng |
 | :--- | :---: | :--- |
-| [**`tuquet`**](./skills/tuquet/SKILL.md) | `cli/` | Master orchestrator, platform health dashboard (`tuquet status`) và interactive shell. |
-| [**`tuquet-automa`**](./skills/tuquet-automa/SKILL.md) | `automa/` | Headless visual DAG engine, kiểm tra workflows JSON và SQLite local store. |
-| [**`tuquet-bot`**](./skills/tuquet-bot/SKILL.md) | `bot/` | Telegram ChatOps daemon lifecycle, giám sát tài nguyên VPS, và GitHub Actions alerts. |
-| [**`tuquet-bridge`**](./skills/tuquet-bridge/SKILL.md) | `cli/` | Điều khiển mesh tunnel đa VPS, proxy SOCKS5 (1080), HTTP (8118) và phân luồng Git. |
-| [**`tuquet-browser`**](./skills/tuquet-browser/SKILL.md) | `browser/` | Quản lý Chromium LTS runtime, profile sandboxing cô lập và anti-detect defenses. |
-| [**`tuquet-cloud`**](./skills/tuquet-cloud/SKILL.md) | `cloud/` | Điều phối cloud control plane, fleet device enrollment và Supabase migrations. |
-| [**`tuquet-faker`**](./skills/tuquet-faker/SKILL.md) | `faker/` | Sinh dữ liệu danh tính mẫu (Mock Persona), định danh thuật toán Modulo 11 và email pool. |
-| [**`tuquet-cicd`**](./skills/tuquet-cicd/SKILL.md) | Standard | Điều phối pipeline CI/CD, gatekeeper kiểm thử cục bộ và tối ưu hóa thời gian build. |
-| [**`tuquet-runner`**](./skills/tuquet-runner/SKILL.md) | `runner/` | Giám sát tiến trình daemon nền cổng 8765, cam kết Zero-Zombie qua Win32 Job Object. |
-| [**`tuquet-security`**](./skills/tuquet-security/SKILL.md) | Security | Hardening máy chủ, Zero-Trust network offloading và tự động phòng ngừa tràn ổ cứng. |
-| [**`tuquet-help`**](./skills/tuquet-help/SKILL.md) | Help | Tra cứu nhanh cheatsheet toàn bộ lệnh CLI và 5 Pillars microservice SSOT. |
+| [**`tuquet`**](./skills/specter/SKILL.md) | `cli/` | Master orchestrator, platform health dashboard (`tuquet status`) và interactive shell. |
+| [**`tuquet-automa`**](./skills/specter-automa/SKILL.md) | `automa/` | Headless visual DAG engine, kiểm tra workflows JSON và SQLite local store. |
+| [**`tuquet-bot`**](./skills/specter-bot/SKILL.md) | `bot/` | Telegram ChatOps daemon lifecycle, giám sát tài nguyên VPS, và GitHub Actions alerts. |
+| [**`tuquet-bridge`**](./skills/specter-bridge/SKILL.md) | `cli/` | Điều khiển mesh tunnel đa VPS, proxy SOCKS5 (1080), HTTP (8118) và phân luồng Git. |
+| [**`tuquet-browser`**](./skills/specter-browser/SKILL.md) | `browser/` | Quản lý Chromium LTS runtime, profile sandboxing cô lập và anti-detect defenses. |
+| [**`tuquet-cloud`**](./skills/specter-cloud/SKILL.md) | `cloud/` | Điều phối cloud control plane, fleet device enrollment và Supabase migrations. |
+| [**`tuquet-faker`**](./skills/specter-faker/SKILL.md) | `faker/` | Sinh dữ liệu danh tính mẫu (Mock Persona), định danh thuật toán Modulo 11 và email pool. |
+| [**`tuquet-cicd`**](./skills/specter-cicd/SKILL.md) | Standard | Điều phối pipeline CI/CD, gatekeeper kiểm thử cục bộ và tối ưu hóa thời gian build. |
+| [**`tuquet-runner`**](./skills/specter-runner/SKILL.md) | `runner/` | Giám sát tiến trình daemon nền cổng 8765, cam kết Zero-Zombie qua Win32 Job Object. |
+| [**`tuquet-security`**](./skills/specter-security/SKILL.md) | Security | Hardening máy chủ, Zero-Trust network offloading và tự động phòng ngừa tràn ổ cứng. |
+| [**`tuquet-help`**](./skills/specter-help/SKILL.md) | Help | Tra cứu nhanh cheatsheet toàn bộ lệnh CLI và 5 Pillars microservice SSOT. |
 | [**`herdr`**](./herdr/SKILL.md) | Agent Runtime | Terminal multiplexer cho AI Agent: điều khiển layout workspace/tab/pane và giám sát lifecycle (`idle`, `working`, `blocked`, `done`). |
 
 ### 🖥️ Kỹ Năng Terminal Multiplexer & Agent Runtime (`herdr`)

@@ -7,7 +7,7 @@ argument-hint: "[whoami|login|logout|config|db]"
 license: MIT
 ---
 
-# Tuquet Cloud Control Plane (`tuquet-cloud`)
+# Specter Cloud Control Plane (`specter-cloud`)
 
 Cloud control plane and fleet enrollment. Authenticates workstations, verifies tenant pairing, and executes remote Supabase migrations via 8118.
 

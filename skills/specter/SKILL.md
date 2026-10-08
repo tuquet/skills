@@ -8,7 +8,7 @@ argument-hint: "[status|dashboard]"
 license: MIT
 ---
 
-# Specter Platform Health (`tuquet`)
+# Specter Platform Health (`specter`)
 
 Zero fluff. Holistic platform heartbeat in one glance. Inspects all services, machine identity, and canonical storage pillars under `~/.specter/`.
 

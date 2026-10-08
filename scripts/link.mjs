@@ -112,8 +112,8 @@ Options:
 
 Examples:
   node scripts/link.mjs --global
-  node scripts/link.mjs --global --skill tuquet-security
-  node scripts/link.mjs --project ./my-web-app --skill tuquet
+  node scripts/link.mjs --global --skill specter-security
+  node scripts/link.mjs --project ./my-web-app --skill specter
   node scripts/link.mjs --unlink --global
 `);
 }

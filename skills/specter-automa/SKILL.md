@@ -7,7 +7,7 @@ argument-hint: "[run|list|inspect|studio] [workflow.json]"
 license: MIT
 ---
 
-# Tuquet Automa Runner (`tuquet-automa`)
+# Specter Automa Runner (`specter-automa`)
 
 Raw Rust CDP execution. No Electron bloat. Fast, headless, and reproducible browser workflows backed by local SQLite run state.
 

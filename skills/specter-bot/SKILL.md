@@ -8,7 +8,7 @@ argument-hint: "[status|logs|restart|test|run|deploy]"
 license: MIT
 ---
 
-# Specter Telegram Bot & ChatOps (`tuquet-bot`)
+# Specter Telegram Bot & ChatOps (`specter-bot`)
 
 Telegram ChatOps and infrastructure health daemon. Monitors Linux VPS resources, triggers website deployments, and routes GitHub Actions notifications.
 

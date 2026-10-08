@@ -14,9 +14,9 @@
   - Error messages, logs, CLI outputs, and documentation must reference exclusively the exact microservice pillar path under `~/.specter/<pillar>/`.
 - **KISS & YAGNI Principle:** Eliminate obsolete backward compatibility shims, hidden aliases, or dual fallback layers.
 
-## Golden Rules for Tuquet AI Agent Skills (Ponytail Standard)
-- **Atomic Naming & Namespace:** Always name skills using the `tuquet-<action>` convention (or root `tuquet`). Strictly adhere to the Single Responsibility Principle (SRP). One skill = one domain or action.
-- **Actionable Frontmatter:** Always include `argument-hint` (e.g. `"[start|stop|probe] [server]"`), explicit trigger phrases, slash commands (`/tuquet-*`), and negative triggers ("Do NOT use for...").
+## Golden Rules for Specter AI Agent Skills (Ponytail Standard)
+- **Atomic Naming & Namespace:** Always name skills using the `specter-<action>` convention (or root `specter`). Strictly adhere to the Single Responsibility Principle (SRP). One skill = one domain or action.
+- **Actionable Frontmatter:** Always include `argument-hint` (e.g. `"[start|stop|probe] [server]"`), explicit trigger phrases, slash commands (`/specter-*`), and negative triggers ("Do NOT use for...").
 - **The No-Bullshit Imperative:** Eliminate marketing prose, enterprise whitepaper fluff, and long paragraphs in skills. Use direct, imperative commands (staccato cadence: *Scan, Hunt, Check, Route, Ship*). Keep lead directives under 1-2 sharp sentences.
 - **Deterministic Output Contract:** Always define an explicit, parseable output schema (e.g., `[SERVICE] <metric>: <status>`) to prevent verbose, drifting LLM responses.
 - **Strict Negative Scoping (Boundaries):** Always define a `## Boundaries` section explicitly forbidding out-of-scope actions (e.g., changes nothing, does not touch host browsers, does not proxy direct git pull).

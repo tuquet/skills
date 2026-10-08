@@ -8,7 +8,7 @@ argument-hint: "[generate|card|config] [-n count] [-d domain]"
 license: MIT
 ---
 
-# Specter Synthetic Identity Engine (`tuquet-faker`)
+# Specter Synthetic Identity Engine (`specter-faker`)
 
 Zero latency synthetic data generation. Produces demographically valid Vietnamese CCCDs (century, gender, province code algorithm), authentic street addresses, and customized email credentials.
 
