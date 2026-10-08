@@ -6,9 +6,11 @@
   <p>
     <a href="https://antigravity.google/"><img src="https://img.shields.io/badge/Agent-Google%20Antigravity-4285F4.svg" alt="Google Antigravity" /></a>
     <a href="https://claude.ai/"><img src="https://img.shields.io/badge/CLI-Claude%20Code-D97706.svg" alt="Claude Code" /></a>
+    <a href="https://tuquet.github.io/docs/automation/ai-agent"><img src="https://img.shields.io/badge/Docs-VitePress%20Portal-blue.svg" alt="Documentation" /></a>
     <a href="https://github.com/tuquet/scoop-bucket"><img src="https://img.shields.io/badge/Scoop-Available-brightgreen.svg" alt="Scoop" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
   </p>
+  <p><strong><a href="https://tuquet.github.io/docs/automation/ai-agent">📖 Read Full Documentation in Portal &rarr;</a> • <a href="https://github.com/tuquet/skills/blob/main/skills/specter-help/SKILL.md">⚡ Master Cheatsheet (`/specter-help`) &rarr;</a></strong></p>
 </div>
 
 ---
@@ -199,6 +201,14 @@ Tài liệu hướng dẫn chi tiết tại [📖 `skills/herdr/SKILL.md`](./her
 - **Tổ chức Layout Đa Nhiệm**: Điều phối terminals thành `workspace`, `tab`, và `pane`. Hỗ trợ chia tách màn hình, gửi lệnh stdin, đọc stdout và kiểm tra tiến trình nền độc lập.
 - **Giám sát Trạng thái Vòng Đời Agent**: Phân tích chính xác trạng thái của agent chạy trong pane (`idle`, `working`, `blocked`, `done`, `unknown`), cho phép phối hợp nhiều agent cùng lúc mà không bị nghẽn lệnh.
 - **Guardrail An Toàn Tuyệt Đối**: Tự động xác thực biến môi trường `HERDR_ENV=1` trước khi điều khiển; chỉ kích hoạt khi người dùng chỉ định rõ ràng nhằm tránh rủi ro xung đột terminal ngoài ý muốn.
+
+---
+
+## 📖 Comprehensive Documentation
+
+Tài liệu toàn diện về thiết kế Atomic Skills, hợp đồng schema, và hướng dẫn tích hợp AI Agent:
+
+👉 **[https://tuquet.github.io/docs/automation/ai-agent](https://tuquet.github.io/docs/automation/ai-agent)**
 
 ---
 
