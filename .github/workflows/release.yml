@@ -32,7 +32,7 @@ jobs:
             if [ -d "$dir" ]; then
               skill_file="${dir}SKILL.md"
               test -f "$skill_file" || (echo "Missing $skill_file" && exit 1)
-              grep -q "^---$" "$skill_file" || exit 1
+              grep -q -E "^---\r?$" "$skill_file" || exit 1
               grep -q "^name:" "$skill_file" || exit 1
               grep -q "^description:" "$skill_file" || exit 1
               echo "✓ Verified $skill_file"
