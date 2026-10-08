@@ -1,6 +1,6 @@
 {
   "name": "@tuquet/skills",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Enterprise AI Coding Agent Tooling, Runbooks & Autonomous Workflows",
   "type": "module",
   "main": "./scripts/link.mjs",
