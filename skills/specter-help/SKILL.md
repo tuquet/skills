@@ -98,7 +98,7 @@ specter> exit              # Exit shell
 | :--- | :--- | :--- |
 | `use <scope>` | Switch active service context | `use bridge`, `use automa`, `use faker` |
 | `<scope>` | Direct switch shortcut at Global scope | `bridge`, `automa`, `runner`, `cloud`, `browser`, `faker` |
-| `back` / `cd ..` | Return to previous / Global scope | `back` (from `tuquet(bridge)>` to `tuquet(global)>`) |
+| `back` / `cd ..` | Return to previous / Global scope | `back` (from `specter(bridge)>` to `specter(global)>`) |
 | `exit` / `quit` | Exit sub-scope (or exit CLI if in Global) | `exit` or `Ctrl+D` |
 | `clear` / `cls` | Clear terminal screen | `clear` |
 | `Tab` | Context-aware autocompletion | Auto-scans workflows in `~/.specter/automa/workflows/` |
@@ -112,6 +112,11 @@ All ecosystem data resolves strictly to:
 - `~/.specter/browser/`: Chromium binaries (`runtimes/`), sandboxed profiles (`profiles/`).
 - `~/.specter/automa/`: Workflow definitions (`workflows/`), execution DB (`automa.sqlite`).
 - `~/.specter/faker/`: Synthetic data schemas (`faker.json`), demographic templates.
+
+## 📖 Full Documentation Portal
+
+Comprehensive installation SOPs, architecture deep-dives, and complete 68-command reference:
+👉 **[https://tuquet.github.io/docs/commands/](https://tuquet.github.io/docs/commands/)**
 
 ## Boundaries
 
