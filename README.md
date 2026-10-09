@@ -4,14 +4,14 @@
   <p><strong>Standardized AI Agent Tooling, Runbooks & Model Context Protocol (MCP) Skills</strong></p>
 
   <p>
-    <a href="https://specter.tuquet.com/skills/"><img src="https://img.shields.io/badge/Docs-VitePress%20Hub-blue.svg" alt="Documentation Hub" /></a>
+    <a href="https://docs.tuquet.com/en/specter/skills/"><img src="https://img.shields.io/badge/Docs-VitePress%20Hub-blue.svg" alt="Documentation Hub" /></a>
     <a href="https://github.com/tuquet/scoop-bucket"><img src="https://img.shields.io/badge/Scoop-specter-brightgreen.svg" alt="Scoop" /></a>
     <a href="https://antigravity.google/"><img src="https://img.shields.io/badge/Agent-Google%20Antigravity-4285F4.svg" alt="Google Antigravity" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
   </p>
 
   <p>
-    <strong><a href="https://specter.tuquet.com/skills/">📖 Đọc toàn bộ tài liệu kỹ thuật tại Documentation Hub &rarr;</a></strong>
+    <strong><a href="https://docs.tuquet.com/en/specter/skills/">📖 Đọc toàn bộ tài liệu kỹ thuật tại Documentation Hub &rarr;</a></strong>
   </p>
 </div>
 
@@ -35,4 +35,4 @@
 
 Toàn bộ danh mục 11 Skills, giao thức MCP Server, hướng dẫn tích hợp Antigravity/Claude Code và quy tắc vận hành được bảo trì duy nhất tại Documentation Hub:
 
-👉 **[https://specter.tuquet.com/skills/](https://specter.tuquet.com/skills/)**
+👉 **[https://docs.tuquet.com/en/specter/skills/](https://docs.tuquet.com/en/specter/skills/)**
