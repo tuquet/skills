@@ -116,7 +116,7 @@ All ecosystem data resolves strictly to:
 ## 📖 Full Documentation Portal
 
 Comprehensive installation SOPs, architecture deep-dives, and complete 68-command reference:
-👉 **[https://tuquet.github.io/docs/commands/](https://tuquet.github.io/docs/commands/)**
+👉 **[https://specter.tuquet.com/commands/](https://specter.tuquet.com/commands/)**
 
 ## Boundaries
 
