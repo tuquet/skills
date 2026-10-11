@@ -46,7 +46,7 @@ function parseArgs() {
     project: false,
     projectDir: process.cwd(),
     skills: [],
-    agents: ['antigravity', 'claude', 'agents'],
+    agents: ['antigravity', 'claude', 'cursor', 'agents'],
     unlink: false,
     list: false,
     copy: false,

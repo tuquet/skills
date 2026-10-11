@@ -9,7 +9,7 @@ license: MIT
 
 # Specter Cloud Control Plane (`specter-cloud`)
 
-Cloud control plane and fleet enrollment. Authenticates workstations, verifies tenant pairing, and executes remote Supabase migrations via 8118.
+Cloud control plane and fleet enrollment. Supabase serves strictly as the centralized Control Plane (tenant identity, device pairing, fleet telemetry, workflow cloud backups). Desktop clients NEVER connect to Supabase directly; all cloud communication is mediated silently by the local Rust BFF daemon (`127.0.0.1:8765`).
 
 ## Code & Specification Pointers (Code-as-Docs)
 
@@ -18,6 +18,7 @@ Read native source definitions on demand:
 - Device Identity: [runner/src/core/identity.rs](../../../runner/src/core/identity.rs)
 - Environment Registry: [runner/src/core/environments.rs](../../../runner/src/core/environments.rs)
 - Cloud DB Migrations: [cloud/supabase/migrations/](../../../cloud/supabase/migrations/)
+- BFF Architecture & Sync Model: [BFF Architecture Reference](../specter-desktop/references/bff_architecture.md)
 
 ## Native Commands
 
@@ -53,4 +54,6 @@ Verdict: Paired with cloud fleet. / Disconnected: run 'specter cloud login'.
 
 ## Boundaries
 
-Scope: Cloud enrollment, identity verification, and Supabase migrations only. Do NOT touch local workflow SQLite (`~/.specter/automa/automa.sqlite`). One-shot execution.
+- Scope: Cloud enrollment, identity verification, and Supabase migrations only.
+- Frontend clients MUST NEVER query Supabase directly; all cloud sync and fleet authentication are mediated via the Rust BFF.
+- Do NOT touch local workflow SQLite (`~/.specter/automa/automa.sqlite`). One-shot execution.
