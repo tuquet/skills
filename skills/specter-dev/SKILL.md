@@ -14,12 +14,13 @@ license: MIT
 
 Fast local dev & preview orchestrator with LAN and Tailscale mesh port binding (`--host 0.0.0.0`). Delivers instant live UI review on mobile phones and workstations without exposing public ports or wasting GitHub Actions CI/CD minutes.
 
-## The Two Runtime Modes: Dev vs. Preview
+## The Runtime Modes: Dev vs. Preview vs. Persistent Nginx
 
 | Mode | Command Pattern | Best For | Network Profile |
 | :--- | :--- | :--- | :--- |
 | **`dev`** | `vite --host 0.0.0.0` | Active coding with instant Hot Module Replacement (HMR). | Serves unbundled ES modules. May feel sluggish over mobile WAN/Tailscale due to high round-trip requests. |
-| **`preview`** | `vite build && vite preview --host 0.0.0.0` | Reviewing & mobile testing on phone/workstation. | Serves pre-bundled, minified chunks with code-splitting. Ultra-low latency and silky smooth performance. |
+| **`preview`** | `vite build && vite preview --host 0.0.0.0` | Reviewing & mobile testing when Nginx is inactive. | Serves pre-bundled, minified chunks via temporary Node.js process. |
+| **`persistent` (Nginx)** | `pnpm build` (Auto-served by Nginx) | **Standard Mobile & Desktop Review**: Zero background task overhead, 24/7 liveness. | Serves production dist via native Nginx daemon on port 80 (Tailscale mesh). ~2MB RAM, zero lag, instant live updates upon build. |
 
 ## The Invariants
 
