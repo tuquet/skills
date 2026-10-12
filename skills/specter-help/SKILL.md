@@ -25,6 +25,7 @@ One card. Zero fluff. All commands, interactive REPL scopes, and SSOT pillars. D
 | **specter-cicd** | `/specter-cicd` | `[preflight\|plan\|tag\|status\|dispatch] [repo] [version]` | CI/CD pipeline orchestration, local pre-flight gatekeeping, semantic version tagging, and GitHub Actions budget control. |
 | **specter-cloud** | `/specter-cloud` | `[whoami\|login\|logout\|config\|db]` | Manage Specter Cloud control plane, device fleet enrollment, and Supabase database migrations. |
 | **specter-desktop** | `/specter-desktop` | `[dev\|build\|doctor\|clean\|audit]` | Manage Tuquet Tauri Desktop runtime lifecycle, in-process Axum bridge daemon,. |
+| **specter-dev** | `/specter-dev` | `[dev\|preview\|stop\|status\|tailscale] [admin\|automa\|web\|docs] [--port <port>]` | Orchestrate local development and preview servers with LAN and Tailscale mesh port exposure (--host 0.0.0.0) for live browser inspection on phone and workstation. |
 | **specter-faker** | `/specter-faker` | `[generate\|card\|config] [-n count] [-d domain]` | Synthetic persona generator with compliant Vietnamese CCCD validation,. |
 | **specter-help** | `/specter-help` | *(None)* | Quick-reference card and master cheatsheet for all Specter CLI commands, interactive shell scopes,. |
 | **specter-runner** | `/specter-runner` | `[status\|start\|stop\|restart\|logs\|probe]` | Kernel-level Win32 Job Object supervisor & daemon controller (port 8765). |

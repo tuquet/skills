@@ -44,5 +44,8 @@
   - *In-Process Embedding:* `desktop/src-tauri` MUST depend on library crates (`automa_core`, `specter-browser`, `specter-runner`) directly. NEVER spawn `specter.exe` as an untracked external sidecar.
   - *Zero-Zombie Guarantee:* On app exit or window close, all child Chromium processes, proxy bridges, and CDP sessions MUST terminate synchronously via `command-group` / Windows Job Object.
   - *Dual-Channel IPC:* Local Axum Bridge (`127.0.0.1:8765`) for domain queries & SSE; Tauri IPC (`tauri::command`) strictly for native OS functions.
+- **Local-First Verification & Zero-Unsolicited-Push Invariant:**
+  - Strictly prohibit executing `git push` or triggering remote GitHub Actions CI/CD workflows unless the user explicitly requests to "push", "deploy", "release", or "ship".
+  - Always verify code and UI changes locally first using `specter-dev` with LAN / Tailscale mesh port binding (`--host 0.0.0.0`) so the user can inspect live in browser on phone or workstation before any remote git push.
 
 
