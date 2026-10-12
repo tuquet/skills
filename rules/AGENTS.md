@@ -47,5 +47,12 @@
 - **Local-First Verification & Zero-Unsolicited-Push Invariant:**
   - Strictly prohibit executing `git push` or triggering remote GitHub Actions CI/CD workflows unless the user explicitly requests to "push", "deploy", "release", or "ship".
   - Always verify code and UI changes locally first using `specter-dev` with LAN / Tailscale mesh port binding (`--host 0.0.0.0`) so the user can inspect live in browser on phone or workstation before any remote git push.
+- **Tuquet Admin & Preferences Invariants:**
+  - *Deep-Clone Baseline Isolation:* Never share object references between `this.initialPreferences` and reactive `this.state`. Always use `this.cloneValue()`.
+  - *Zero-Mutation in Helpers:* Never mutate reactive preference objects inside CSS variable generators (`update-css-variables.ts`) or calculation helpers.
+  - *Pristine Cache Purge on Reset:* On `resetPreferences()`, cleanly purge `STORAGE_KEYS.MAIN` and `STORAGE_KEYS.CUSTOM` from `localStorage` so subsequent F5 page reloads never restore stale user overrides.
+  - *PWA & Nginx Header Invariant:* Always serve `sw.js`, `manifest.webmanifest`, and `_app-config-*.js` with `Cache-Control: no-cache, no-store, must-revalidate; Expires: 0`. PWA options must enforce `registerType: 'autoUpdate'`, `workbox.skipWaiting: true`, and `workbox.clientsClaim: true`.
+  - *Local Build & Zero-Push:* Always run `pnpm run build:local` in `/root/tuquet/admin` to test on Tailscale (`http://100.68.217.61/`). NEVER run `git push`.
+
 
 

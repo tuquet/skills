@@ -18,6 +18,7 @@ One card. Zero fluff. All commands, interactive REPL scopes, and SSOT pillars. D
 | Skill | Trigger | Argument Hint | Scope & Purpose |
 | :--- | :--- | :--- | :--- |
 | **specter** | `/specter` | `[status\|dashboard]` | Master orchestrator and platform health dashboard (`specter status`). |
+| **specter-admin** | `/specter-admin` | `[preferences\|widgets\|diff\|test\|build]` | Master runbook for Tuquet Admin Dashboard, Preferences engine, and upstream diff triage. |
 | **specter-automa** | `/specter-automa` | `[run\|list\|inspect\|studio] [workflow.json]` | Headless automation runner and visual DAG engine for browser tasks via native CDP and local SQLite store. |
 | **specter-bot** | `/specter-bot` | `[status\|logs\|restart\|test\|run\|deploy]` | Telegram ChatOps assistant daemon, server health monitoring, and GitHub Actions notification engine. |
 | **specter-bridge** | `/specter-bridge` | `[status\|start\|stop\|deploy\|check] [server]` | Manage network bridge tunnels, SOCKS5 proxy (1080), HTTP adapter (8118), and local SSH (2222). |
