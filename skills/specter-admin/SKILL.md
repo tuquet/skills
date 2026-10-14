@@ -63,7 +63,7 @@ Monorepo of **39 packages** orchestrated via `turbo@2.10.13` and `pnpm@11.16.0` 
 ## 2. Route Architecture & The 22 Endpoints
 
 ### 2.1. Routing Topology & Guards Flow
-1. **`coreRoutes`** ([`src/router/routes/index.ts`](file:///root/tuquet/admin/apps/web-admin/src/router/routes/index.ts)): Root, Profile, `/auth/*` cluster, 404 fallback. Bypasses access checks.
+1. **`coreRoutes`** ([`src/router/routes/index.ts`](../../admin/apps/web-admin/src/router/routes/index.ts)): Root, Profile, `/auth/*` cluster, 404 fallback. Bypasses access checks.
 2. **`accessRoutes`**: Modules loaded dynamically via `import.meta.glob`:
    - `dashboard.ts`: `/dashboard/analytics` + navigation shortcuts.
    - `tenants.ts`: `/tenants`, `/tenants/:id`.
@@ -80,28 +80,28 @@ Monorepo of **39 packages** orchestrated via `turbo@2.10.13` and `pnpm@11.16.0` 
 
 | # | Route Path | Route Name | Plugin | Access Authority | Layout | Component File | Supabase Table / Source |
 |---|---|---|---|---|---|---|---|
-| 1 | `/dashboard/analytics` | `Analytics` | `core-iam` | Authenticated | `BasicLayout` | [`views/dashboard/analytics/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/dashboard/analytics/index.vue) | `public.tenants`, `system_plugins` |
-| 2 | `/tenants` | `Tenants` | `core-iam` | `['superadmin', 'tenants:read']` | `BasicLayout` | [`views/tenants/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/tenants/index.vue) | `public.tenants` |
-| 3 | `/tenants/:id` | `TenantDetail` | `core-iam` | `['superadmin', 'tenants:read']` | `BasicLayout` | [`views/tenants/detail.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/tenants/detail.vue) | `public.tenants`, `tenant_members` |
-| 4 | `/fleet/devices` | `FleetDevices` | `runners` | `['superadmin', 'runners:devices:read']` | `BasicLayout` | [`views/fleet/devices/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/fleet/devices/index.vue) | `runners.devices` |
-| 5 | `/fleet/browsers` | `FleetBrowsers` | `runners` | `['superadmin', 'runners:browsers:read']` | `BasicLayout` | [`views/fleet/browsers/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/fleet/browsers/index.vue) | `runners.browsers` |
-| 6 | `/fleet/proxies` | `FleetProxies` | `runners` | `['superadmin', 'runners:proxies:read']` | `BasicLayout` | [`views/fleet/proxies/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/fleet/proxies/index.vue) | `runners.proxies` |
-| 7 | `/automation/workflows` | `AutomationWorkflows` | `automa` | `['superadmin', 'automa:workflows:read']` | `BasicLayout` | [`views/automation/workflows/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/automation/workflows/index.vue) | `automa.workflows` |
-| 8 | `/automation/runs` | `AutomationRuns` | `automa` | `['superadmin', 'automa:campaigns:read']` | `BasicLayout` | [`views/automation/runs/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/automation/runs/index.vue) | `automa.campaign_runs` |
-| 9 | `/automation/runs/:id` | `AutomationRunDetail` | `automa` | `['superadmin', 'automa:logs:read']` | `BasicLayout` | [`views/automation/runs/detail.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/automation/runs/detail.vue) | `automa.execution_logs` (3s poll) |
-| 10 | `/system/plugins` | `SystemPlugins` | `core-iam` | `['superadmin', 'plugins:read']` | `BasicLayout` | [`views/system/plugins/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/system/plugins/index.vue) | `public.system_plugins` |
-| 11 | `/system/plans` | `SystemPlans` | `subscriptions` | `['superadmin', 'subscriptions:read']` | `BasicLayout` | [`views/system/plans/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/system/plans/index.vue) | `billing.plans` |
-| 12 | `/system/users` | `SystemUsers` | `core-iam` | `['superadmin']` | `BasicLayout` | [`views/system/users/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/system/users/index.vue) | `public.profiles` |
-| 13 | `/system/audit-logs` | `SystemAuditLogs` | `core-iam` | `['superadmin']` | `BasicLayout` | [`views/system/audit-logs/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/system/audit-logs/index.vue) | `public.audit_logs` |
-| 14 | `/system/subscriptions` | `SystemSubscriptions` | `subscriptions` | `['superadmin']` | `BasicLayout` | [`views/system/subscriptions/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/system/subscriptions/index.vue) | `billing.subscriptions` |
-| 15 | `/system/roles` | `SystemRoles` | `core-iam` | `['superadmin']` | `BasicLayout` | [`views/system/roles/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/system/roles/index.vue) | `public.roles`, `permissions` |
-| 16 | `/auth/login` | `Login` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/login.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/_core/authentication/login.vue) | Supabase GoTrue + Turnstile |
-| 17 | `/auth/register` | `Register` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/register.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/_core/authentication/register.vue) | Supabase GoTrue |
-| 18 | `/auth/forget-password` | `ForgetPassword` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/forget-password.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/_core/authentication/forget-password.vue) | Supabase GoTrue |
-| 19 | `/auth/reset-password` | `ResetPassword` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/reset-password.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/_core/authentication/reset-password.vue) | Supabase GoTrue |
-| 20 | `/auth/callback` | `AuthCallback` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/callback.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/_core/authentication/callback.vue) | Supabase OAuth (GitHub/Google) |
-| 21 | `/auth/desktop` | `DesktopBridge` | Core | Authenticated | `AuthPageLayout` | [`views/_core/authentication/desktop-bridge.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/_core/authentication/desktop-bridge.vue) | Desktop Loopback SSO (:8765) |
-| 22 | `/profile` | `Profile` | Core | Authenticated | `BasicLayout` | [`views/_core/profile/index.vue`](file:///root/tuquet/admin/apps/web-admin/src/views/_core/profile/index.vue) | `public.profiles` |
+| 1 | `/dashboard/analytics` | `Analytics` | `core-iam` | Authenticated | `BasicLayout` | [`views/dashboard/analytics/index.vue`](../../admin/apps/web-admin/src/views/dashboard/analytics/index.vue) | `public.tenants`, `system_plugins` |
+| 2 | `/tenants` | `Tenants` | `core-iam` | `['superadmin', 'tenants:read']` | `BasicLayout` | [`views/tenants/index.vue`](../../admin/apps/web-admin/src/views/tenants/index.vue) | `public.tenants` |
+| 3 | `/tenants/:id` | `TenantDetail` | `core-iam` | `['superadmin', 'tenants:read']` | `BasicLayout` | [`views/tenants/detail.vue`](../../admin/apps/web-admin/src/views/tenants/detail.vue) | `public.tenants`, `tenant_members` |
+| 4 | `/fleet/devices` | `FleetDevices` | `runners` | `['superadmin', 'runners:devices:read']` | `BasicLayout` | [`views/fleet/devices/index.vue`](../../admin/apps/web-admin/src/views/fleet/devices/index.vue) | `runners.devices` |
+| 5 | `/fleet/browsers` | `FleetBrowsers` | `runners` | `['superadmin', 'runners:browsers:read']` | `BasicLayout` | [`views/fleet/browsers/index.vue`](../../admin/apps/web-admin/src/views/fleet/browsers/index.vue) | `runners.browsers` |
+| 6 | `/fleet/proxies` | `FleetProxies` | `runners` | `['superadmin', 'runners:proxies:read']` | `BasicLayout` | [`views/fleet/proxies/index.vue`](../../admin/apps/web-admin/src/views/fleet/proxies/index.vue) | `runners.proxies` |
+| 7 | `/automation/workflows` | `AutomationWorkflows` | `automa` | `['superadmin', 'automa:workflows:read']` | `BasicLayout` | [`views/automation/workflows/index.vue`](../../admin/apps/web-admin/src/views/automation/workflows/index.vue) | `automa.workflows` |
+| 8 | `/automation/runs` | `AutomationRuns` | `automa` | `['superadmin', 'automa:campaigns:read']` | `BasicLayout` | [`views/automation/runs/index.vue`](../../admin/apps/web-admin/src/views/automation/runs/index.vue) | `automa.campaign_runs` |
+| 9 | `/automation/runs/:id` | `AutomationRunDetail` | `automa` | `['superadmin', 'automa:logs:read']` | `BasicLayout` | [`views/automation/runs/detail.vue`](../../admin/apps/web-admin/src/views/automation/runs/detail.vue) | `automa.execution_logs` (3s poll) |
+| 10 | `/system/plugins` | `SystemPlugins` | `core-iam` | `['superadmin', 'plugins:read']` | `BasicLayout` | [`views/system/plugins/index.vue`](../../admin/apps/web-admin/src/views/system/plugins/index.vue) | `public.system_plugins` |
+| 11 | `/system/plans` | `SystemPlans` | `subscriptions` | `['superadmin', 'subscriptions:read']` | `BasicLayout` | [`views/system/plans/index.vue`](../../admin/apps/web-admin/src/views/system/plans/index.vue) | `billing.plans` |
+| 12 | `/system/users` | `SystemUsers` | `core-iam` | `['superadmin']` | `BasicLayout` | [`views/system/users/index.vue`](../../admin/apps/web-admin/src/views/system/users/index.vue) | `public.profiles` |
+| 13 | `/system/audit-logs` | `SystemAuditLogs` | `core-iam` | `['superadmin']` | `BasicLayout` | [`views/system/audit-logs/index.vue`](../../admin/apps/web-admin/src/views/system/audit-logs/index.vue) | `public.audit_logs` |
+| 14 | `/system/subscriptions` | `SystemSubscriptions` | `subscriptions` | `['superadmin']` | `BasicLayout` | [`views/system/subscriptions/index.vue`](../../admin/apps/web-admin/src/views/system/subscriptions/index.vue) | `billing.subscriptions` |
+| 15 | `/system/roles` | `SystemRoles` | `core-iam` | `['superadmin']` | `BasicLayout` | [`views/system/roles/index.vue`](../../admin/apps/web-admin/src/views/system/roles/index.vue) | `public.roles`, `permissions` |
+| 16 | `/auth/login` | `Login` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/login.vue`](../../admin/apps/web-admin/src/views/_core/authentication/login.vue) | Supabase GoTrue + Turnstile |
+| 17 | `/auth/register` | `Register` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/register.vue`](../../admin/apps/web-admin/src/views/_core/authentication/register.vue) | Supabase GoTrue |
+| 18 | `/auth/forget-password` | `ForgetPassword` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/forget-password.vue`](../../admin/apps/web-admin/src/views/_core/authentication/forget-password.vue) | Supabase GoTrue |
+| 19 | `/auth/reset-password` | `ResetPassword` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/reset-password.vue`](../../admin/apps/web-admin/src/views/_core/authentication/reset-password.vue) | Supabase GoTrue |
+| 20 | `/auth/callback` | `AuthCallback` | Core | Public | `AuthPageLayout` | [`views/_core/authentication/callback.vue`](../../admin/apps/web-admin/src/views/_core/authentication/callback.vue) | Supabase OAuth (GitHub/Google) |
+| 21 | `/auth/desktop` | `DesktopBridge` | Core | Authenticated | `AuthPageLayout` | [`views/_core/authentication/desktop-bridge.vue`](../../admin/apps/web-admin/src/views/_core/authentication/desktop-bridge.vue) | Desktop Loopback SSO (:8765) |
+| 22 | `/profile` | `Profile` | Core | Authenticated | `BasicLayout` | [`views/_core/profile/index.vue`](../../admin/apps/web-admin/src/views/_core/profile/index.vue) | `public.profiles` |
 
 ### 2.3. Intra-Page Navigation & Route Transition Architecture
 
@@ -119,7 +119,7 @@ When navigating between routes:
 ## 3. Data Access & Supabase REST SSOT
 
 ### 3.1. Single Source of Truth (`supabaseRequest`)
-- File: [`apps/web-admin/src/api/core/supabase-client.ts`](file:///root/tuquet/admin/apps/web-admin/src/api/core/supabase-client.ts)
+- File: [`apps/web-admin/src/api/core/supabase-client.ts`](../../admin/apps/web-admin/src/api/core/supabase-client.ts)
 - **Zero-Direct-Supabase Rule:** Strictly prohibit importing `@supabase/supabase-js` in client-side code. All queries route through `supabaseRequest<T>()`.
 - **PostgREST Schema Profile Switching:**
   - GET / HEAD: Injects `Accept-Profile: <schema>`.
@@ -147,7 +147,7 @@ export async function getFleetDevicesApi(status?: string) {
 ```
 
 ### 3.2. Private Network Access (PNA) Loopback Standard
-- Function: `probeLocalDaemonApi(port = 8765)` in [`apps/web-admin/src/api/core/fleet.ts`](file:///root/tuquet/admin/apps/web-admin/src/api/core/fleet.ts).
+- Function: `probeLocalDaemonApi(port = 8765)` in [`apps/web-admin/src/api/core/fleet.ts`](../../admin/apps/web-admin/src/api/core/fleet.ts).
 - Calls local Rust daemon: `fetch('http://127.0.0.1:8765/api/v1/status', { method: 'GET', mode: 'no-cors', signal })`.
 - Timeout: Hard limit $\le 1200\text{ms}$ via `AbortController`.
 - Non-blocking: Caught inside try-catch. If blocked by Chromium PNA prompt, UI remains responsive and marks daemon offline without freezing.
@@ -259,7 +259,7 @@ The VxeTable ecosystem in Tuquet Admin operates across 4 coordinated tiers:
 
 ## 5. Preferences Engine & The 7 Core Invariants
 
-Managed by `PreferenceManager` singleton ([`packages/@core/preferences/src/preferences.ts`](file:///root/tuquet/admin/packages/@core/preferences/src/preferences.ts)):
+Managed by `PreferenceManager` singleton ([`packages/@core/preferences/src/preferences.ts`](../../admin/packages/@core/preferences/src/preferences.ts)):
 
 1. **Zero-Mutation in Helpers:** In `update-css-variables.ts`, NEVER assign `preferences.theme.colorPrimary = ...`. Compute local values purely for CSS variable injection.
 2. **Deep-Clone Baseline Isolation:** `defu` only copies shallow references. `this.initialPreferences` MUST always be deeply cloned using `this.cloneValue()`. `getInitialPreferences()` must return a deep clone.
@@ -274,9 +274,9 @@ Managed by `PreferenceManager` singleton ([`packages/@core/preferences/src/prefe
 ## 6. Pre-Push Quality Gate & Zero-Waste CI
 
 > [!CAUTION]
-> GitHub Actions minutes are strictly rationed. NEVER push code to remote without passing all 3 local checks.
+> GitHub Actions minutes are strictly rationed. NEVER push code to remote without passing all 4 local checks.
 
-### 6.1. The 3-Step Local Gate
+### 6.1. The 4-Step Local Gate
 ```bash
 cd /root/tuquet/admin
 
@@ -286,7 +286,10 @@ pnpm run check:type
 # 2. Linting & Formatting: oxlint + oxfmt + eslint + stylelint (0 errors)
 pnpm run lint
 
-# 3. Web Admin Production Build: Vite packaging bundle (0 errors)
+# 3. Headless Browser Console & Runtime Gate: 22/22 routes verified in headless Chrome (0 Vue/i18n/router warnings, 0 page errors)
+pnpm run check:console
+
+# 4. Web Admin Production Build: Vite packaging bundle (0 errors)
 pnpm run build:admin
 ```
 

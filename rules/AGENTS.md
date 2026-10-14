@@ -59,4 +59,15 @@
   - *Local Build & Zero-Push:* Always run `pnpm run build:local` in `/root/tuquet/admin` to test on Tailscale (`http://100.68.217.61/`). NEVER run `git push`.
 
 
+## Typography & UI Design Tokens Guardrails
+- **Canonical Typography SSOT:** All UI typography across Web Admin and Desktop MUST cross-reference and comply with `skills/rules/TYPOGRAPHY.md`.
+- **Zero Remote Font CDN Calls:** Strictly prohibit `<link>` tags to Google Fonts CDN (`fonts.googleapis.com` / `fonts.gstatic.com`). Fonts must be self-hosted locally (WOFF2) with `font-display: swap`.
+- **Sans-Serif Stack & Dynamic Preferences:** UI font family stack resolves through `--font-family` (Inter, Roboto, System UI) configurable via Preferences Extension.
+- **7-Tier Modular Scale:** Use only standardized font sizes (`text-2xs` 10px to `text-2xl` 24px). Prohibit arbitrary pixel classes (`text-[13px]`, `text-[15px]`).
+- **Component Typography Matrix Enforcement:**
+  - Table Headers: `text-xs font-semibold uppercase tracking-wider text-muted-foreground`
+  - Table Data: `text-sm font-normal text-foreground` (or `font-mono text-xs` for IDs, hashes, IPs)
+  - Card Titles: `text-base font-semibold tracking-tight`
+  - Hero KPI Stats: `text-2xl font-bold tracking-tight`
+
 
