@@ -5,7 +5,6 @@
 
   <p>
     <a href="https://docs.tuquet.com/en/specter/skills/"><img src="https://img.shields.io/badge/Docs-VitePress%20Hub-blue.svg" alt="Documentation Hub" /></a>
-    <a href="https://github.com/tuquet/scoop-bucket"><img src="https://img.shields.io/badge/Scoop-specter-brightgreen.svg" alt="Scoop" /></a>
     <a href="https://antigravity.google/"><img src="https://img.shields.io/badge/Agent-Google%20Antigravity-4285F4.svg" alt="Google Antigravity" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
   </p>
