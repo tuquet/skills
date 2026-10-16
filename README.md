@@ -54,6 +54,19 @@ Curated from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytai
 | [ponytail-debt](skills/ponytail-debt) | Track deferred shortcuts and tech debt items across the codebase. |
 | [ponytail-gain](skills/ponytail-gain) | Measure code reduction, token economy, and performance savings achieved through simplification. |
 
+### Modern Web Frameworks & Tooling
+
+Curated from [antfu/skills](https://github.com/antfu/skills). Standards for modern TypeScript, Vue Composition API, build tools, and git workflows.
+
+| Skill | Description |
+|-------|-------------|
+| [vue](skills/vue) | Vue 3 core: Composition API, script setup macros, reactivity, and performance best practices. |
+| [vitest](skills/vitest) | Vitest: Fast unit testing framework powered by Vite with Jest-compatible APIs and mocking. |
+| [vite](skills/vite) | Vite build tool: Configuration, plugin API, SSR, and library mode. |
+| [pnpm](skills/pnpm) | pnpm: Fast, disk-space-efficient package manager, workspaces, and catalog management. |
+| [pinia](skills/pinia) | Pinia: Intuitive, type-safe state management for Vue 3 applications. |
+| [antfu-create-pr](skills/antfu-create-pr) | Create reviewable PRs with Conventional Commits, evidence-based descriptions, and gh screenshots. |
+
 ### Production Engineering & Reliability
 
 Curated from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills). Production-grade engineering runbooks and verification patterns.

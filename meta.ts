@@ -1,8 +1,8 @@
 /**
  * Tuquet Skills Ecosystem - Source Metadata & Curation Policy
  * 
- * Defines upstream Git submodules and which skills are curated into
- * the central tuquet/skills distribution.
+ * Defines upstream Git submodules and internal modules curated into
+ * the central tuquet/skills distribution hub.
  */
 
 export interface VendorConfig {
@@ -16,7 +16,36 @@ export interface VendorConfig {
 }
 
 export const vendors: Record<string, VendorConfig> = {
-  // Production-grade engineering skills by Addy Osmani
+  // Anthony Fu's modern web & framework skills (Vue, Vitest, Vite, Pnpm, Pinia, PR)
+  'antfu': {
+    url: 'https://github.com/antfu/skills.git',
+    path: 'vendors/antfu-skills',
+    prefix: '',
+    includeOnly: [
+      'vue',
+      'vitest',
+      'vite',
+      'pnpm',
+      'pinia',
+      'antfu-create-pr'
+    ]
+  },
+
+  // Senior developer mindset by Dietrich Gebert (Radical simplicity & minimalism)
+  'ponytail': {
+    url: 'https://github.com/DietrichGebert/ponytail.git',
+    path: 'vendors/dietrichgebert-ponytail',
+    prefix: '',
+    includeOnly: [
+      'ponytail',
+      'ponytail-review',
+      'ponytail-audit',
+      'ponytail-debt',
+      'ponytail-gain'
+    ]
+  },
+
+  // Production-grade engineering skills by Addy Osmani (Google)
   'addyosmani': {
     url: 'https://github.com/addyosmani/agent-skills.git',
     path: 'vendors/addyosmani-agent-skills',
@@ -33,23 +62,29 @@ export const vendors: Record<string, VendorConfig> = {
       'planning-and-task-breakdown',
       'context-engineering'
     ]
-  },
-
-  // Senior developer mindset by Dietrich Gebert (Radical simplicity)
-  'ponytail': {
-    url: 'https://github.com/DietrichGebert/ponytail.git',
-    path: 'vendors/dietrichgebert-ponytail',
-    prefix: '', // already prefixed with ponytail-*
-    includeOnly: [
-      'ponytail',
-      'ponytail-review',
-      'ponytail-audit',
-      'ponytail-debt',
-      'ponytail-gain'
-    ]
   }
 }
 
+/**
+ * Tuquet & Specter Native Ecosystem Skills
+ */
 export const internalSkills = [
-  'review-shadcn-standard'
+  'review-shadcn-standard',
+  'specter',
+  'specter-runner',
+  'specter-cli',
+  'specter-automa',
+  'specter-bridge',
+  'specter-browser',
+  'specter-cicd',
+  'specter-cloud',
+  'specter-desktop',
+  'specter-dev',
+  'specter-faker',
+  'specter-help',
+  'specter-security',
+  'automa-core',
+  'automa-monorepo',
+  'automa-shadcn',
+  'automa-webe'
 ]

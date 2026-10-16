@@ -31,12 +31,32 @@ async function run() {
   }
 
   console.log('\n🔍 Step 2: Reading Curation Rules from meta.ts...');
-  // Import metadata
-  const metaPath = path.join(REPO_ROOT, 'meta.ts');
-  const metaContent = fs.readFileSync(metaPath, 'utf-8');
-
-  // Simple parser for vendors from meta.ts
   const vendors = [
+    {
+      name: 'antfu',
+      dir: path.join(REPO_ROOT, 'vendors', 'antfu-skills', 'skills'),
+      prefix: '',
+      skills: [
+        'vue',
+        'vitest',
+        'vite',
+        'pnpm',
+        'pinia',
+        'antfu-create-pr'
+      ]
+    },
+    {
+      name: 'ponytail',
+      dir: path.join(REPO_ROOT, 'vendors', 'dietrichgebert-ponytail', 'skills'),
+      prefix: '',
+      skills: [
+        'ponytail',
+        'ponytail-review',
+        'ponytail-audit',
+        'ponytail-debt',
+        'ponytail-gain'
+      ]
+    },
     {
       name: 'addyosmani',
       dir: path.join(REPO_ROOT, 'vendors', 'addyosmani-agent-skills', 'skills'),
@@ -52,18 +72,6 @@ async function run() {
         'api-and-interface-design',
         'planning-and-task-breakdown',
         'context-engineering'
-      ]
-    },
-    {
-      name: 'ponytail',
-      dir: path.join(REPO_ROOT, 'vendors', 'dietrichgebert-ponytail', 'skills'),
-      prefix: '',
-      skills: [
-        'ponytail',
-        'ponytail-review',
-        'ponytail-audit',
-        'ponytail-debt',
-        'ponytail-gain'
       ]
     }
   ];
