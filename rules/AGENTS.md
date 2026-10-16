@@ -66,7 +66,7 @@
 - **7-Tier Modular Scale:** Use only standardized font sizes (`text-2xs` 10px to `text-2xl` 24px). Prohibit arbitrary pixel classes (`text-[13px]`, `text-[15px]`).
 - **Component Typography Matrix Enforcement:**
   - Table Headers: `text-xs font-semibold uppercase tracking-wider text-muted-foreground`
-  - Table Data: `text-sm font-normal text-foreground` (or `font-mono text-xs` for IDs, hashes, IPs)
+  - Table Data: `text-sm font-normal text-foreground` (or `text-xs` for IDs, hashes, IPs)
   - Card Titles: `text-base font-semibold tracking-tight`
   - Hero KPI Stats: `text-2xl font-bold tracking-tight`
 

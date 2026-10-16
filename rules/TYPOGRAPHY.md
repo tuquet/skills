@@ -60,8 +60,8 @@ Every component built or reviewed MUST adhere strictly to this class matrix:
 ### 1. Data Tables
 - **Header Columns**: `text-xs font-semibold uppercase tracking-wider text-muted-foreground`
 - **Body Cells (Standard Text)**: `text-sm font-normal text-foreground`
-- **Body Cells (IDs / Hashes / IPs)**: `font-mono text-xs text-muted-foreground`
-- **Row Counters / Badges**: `font-mono text-xs` or `text-xs font-medium`
+- **Body Cells (IDs / Hashes / IPs)**: `text-xs text-muted-foreground`
+- **Row Counters / Badges**: `text-xs` or `text-xs font-medium`
 
 ### 2. Cards & KPI Metrics
 - **Card Title**: `text-base font-semibold tracking-tight text-foreground`

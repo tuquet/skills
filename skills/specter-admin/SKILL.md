@@ -197,7 +197,7 @@ Follow global enterprise standards (Stripe, GitHub Primer, Vercel, Linear, Apple
    - **Accessibility (A11y):** Screen readers spell out all-caps text letter-by-letter as acronyms ("O-P-E-R-A-T-I-O-N-A-L").
    - Strictly PROHIBIT `uppercase` on Page Header Badges, Status Badges, large KPI metrics (`text-2xl`), and prose.
 3. **The 3 Allowed Uppercase Exceptions:**
-   - **Technical Acronyms ($\le 4$ chars):** `API`, `CPU`, `RAM`, `IP`, `UUID` (`font-mono text-xs`).
+   - **Technical Acronyms ($\le 4$ chars):** `API`, `CPU`, `RAM`, `IP`, `UUID` (`text-xs`).
    - **Table Column Headers (10-11px):** `text-2xs font-semibold uppercase tracking-wider text-muted-foreground` (MUST include `tracking-wider`).
    - **Micro-Category Overlines:** `text-2xs font-medium uppercase tracking-widest text-muted-foreground`.
 4. **Clean Page Header Invariant:**
