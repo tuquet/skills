@@ -66,13 +66,23 @@ function setupGeminiPlugins() {
   const pluginsDir = path.join(HOME, '.gemini', 'config', 'plugins');
   fs.mkdirSync(pluginsDir, { recursive: true });
 
-  // 1. Link this skills repo as 'tuquet' and 'specter' plugins
+  // 1. Configure 'tuquet' global plugin (copy real directory on win32 so Antigravity Go server discovers it)
   const tuquetPlugin = path.join(pluginsDir, 'tuquet');
-  const specterPlugin = path.join(pluginsDir, 'specter');
-
-  createSymlinkOrJunction(REPO_ROOT, tuquetPlugin);
-  createSymlinkOrJunction(REPO_ROOT, specterPlugin);
-  log(COLORS.green, '  ✓', `Linked Tuquet & Specter plugin -> ${pluginsDir}`);
+  if (process.platform === 'win32') {
+    fs.mkdirSync(path.join(tuquetPlugin, 'rules'), { recursive: true });
+    fs.mkdirSync(path.join(tuquetPlugin, 'skills'), { recursive: true });
+    for (const file of ['plugin.json', 'gemini-extension.json']) {
+      const src = path.join(REPO_ROOT, file);
+      if (fs.existsSync(src)) fs.copyFileSync(src, path.join(tuquetPlugin, file));
+    }
+    const rulesSrc = path.join(REPO_ROOT, 'rules');
+    if (fs.existsSync(rulesSrc)) {
+      fs.cpSync(rulesSrc, path.join(tuquetPlugin, 'rules'), { recursive: true, force: true });
+    }
+  } else {
+    createSymlinkOrJunction(REPO_ROOT, tuquetPlugin);
+  }
+  log(COLORS.green, '  ✓', `Configured Tuquet global plugin -> ${tuquetPlugin}`);
 
   // 2. Clone or update addyosmani/agent-skills
   const agentSkillsDir = path.join(pluginsDir, 'agent-skills');

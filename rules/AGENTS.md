@@ -70,4 +70,13 @@
   - Card Titles: `text-base font-semibold tracking-tight`
   - Hero KPI Stats: `text-2xl font-bold tracking-tight`
 
+## Shadcn 72-Component Standard Review Gate (`review-shadcn-standard`)
+- **Mandatory Trigger on `review`:** Whenever the user types `review`, `/review-shadcn-standard`, `"review ui"`, or `"review shadcn"` in a frontend workspace, ALWAYS activate `skills/skills/review-shadcn-standard/SKILL.md` and cross-reference `skills/skills/review-shadcn-standard/references/component-migration-matrix.md`.
+- **72 Canonical Components Enforcement:** Every UI component MUST use one of the 72 standard Shadcn components (`Accordion`, `Alert`, `Alert Dialog`, `Aspect Ratio`, `Attachment`, `Avatar`, `Badge`, `Breadcrumb`, `Bubble`, `Button`, `Button Group`, `Calendar`, `Card`, `Carousel`, `Chart`, `Checkbox`, `Code Block`, `Collapsible`, `Combobox`, `Command`, `Context Menu`, `Data Table`, `Date Picker`, `Dialog`, `Drawer`, `Dropdown Menu`, `Empty`, `Field`, `Form`, `Hover Card`, `Input`, `Input Group`, `Input OTP`, `Item`, `Kbd`, `Label`, `Marker`, `Menubar`, `Message`, `Message Scroller`, `Native Select`, `Navigation Menu`, `Number Field`, `Pagination`, `Pin Input`, `Popover`, `Progress`, `Questionnaire`, `Radio Group`, `Range Calendar`, `Resizable`, `Scroll Area`, `Select`, `Separator`, `Sheet`, `Sidebar`, `Skeleton`, `Slider`, `Sonner`, `Spinner`, `Stepper`, `Switch`, `Table`, `Tabs`, `Tags Input`, `Textarea`, `Toast`, `Toggle`, `Toggle Group`, `Tooltip`, `Trace`, `Typography`).
+- **Two-Step Review Gate:**
+  1. Output the structured audit report table first and **wait for user confirmation (`proceed`)** before editing any code.
+  2. If a required component from the 72 standards is not yet available in the current project's UI package, mark it as `[THIẾU PRIMITIVE]` in the report and ask the user for approval before adding/porting the primitive.
 
+## Skills Scope & Project Isolation Invariant
+- **Global Cross-Project Skills Only (`skills/skills/`):** Only universal cross-project standards (such as `review-shadcn-standard`) reside in `skills/skills/` and are linked to global agent directories (`~/.gemini/config/skills/`).
+- **Project-Scoped Domain Skills (`<project>/skills/`):** All `specter*` domain skills MUST reside inside their respective sub-repository (`admin/skills/specter-admin`, `automa/skills/specter-automa`, `bot/skills/specter-bot`, `browser/skills/specter-browser`, `cloud/skills/specter-cloud`, `faker/skills/specter-faker`, `runner/skills/specter-runner`, and `cli/skills/specter*`) registered via `.agents/skills.json`. Never install project-specific `specter*` skills into global `~/.gemini/config/skills/`.

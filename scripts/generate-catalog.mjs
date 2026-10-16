@@ -15,9 +15,22 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
+const WORKSPACE_ROOT = path.resolve(REPO_ROOT, '..');
 const SKILLS_DIR = path.join(REPO_ROOT, 'skills');
 const README_PATH = path.join(REPO_ROOT, 'README.md');
-const HELP_SKILL_PATH = path.join(SKILLS_DIR, 'specter-help', 'SKILL.md');
+const HELP_SKILL_PATH = path.join(WORKSPACE_ROOT, 'cli', 'skills', 'specter-help', 'SKILL.md');
+
+const PROJECT_SKILL_DIRS = [
+  SKILLS_DIR,
+  path.join(WORKSPACE_ROOT, 'admin', 'skills'),
+  path.join(WORKSPACE_ROOT, 'automa', 'skills'),
+  path.join(WORKSPACE_ROOT, 'bot', 'skills'),
+  path.join(WORKSPACE_ROOT, 'browser', 'skills'),
+  path.join(WORKSPACE_ROOT, 'cli', 'skills'),
+  path.join(WORKSPACE_ROOT, 'cloud', 'skills'),
+  path.join(WORKSPACE_ROOT, 'faker', 'skills'),
+  path.join(WORKSPACE_ROOT, 'runner', 'skills'),
+];
 
 function parseSkillFrontmatter(content) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -47,18 +60,24 @@ function parseSkillFrontmatter(content) {
 }
 
 function getSkills() {
-  const entries = fs.readdirSync(SKILLS_DIR, { withFileTypes: true });
   const skills = [];
+  const seen = new Set();
 
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-    const skillMd = path.join(SKILLS_DIR, entry.name, 'SKILL.md');
-    if (!fs.existsSync(skillMd)) continue;
+  for (const dir of PROJECT_SKILL_DIRS) {
+    if (!fs.existsSync(dir)) continue;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-    const content = fs.readFileSync(skillMd, 'utf8');
-    const meta = parseSkillFrontmatter(content);
-    if (meta && meta.name) {
-      skills.push(meta);
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      const skillMd = path.join(dir, entry.name, 'SKILL.md');
+      if (!fs.existsSync(skillMd)) continue;
+
+      const content = fs.readFileSync(skillMd, 'utf8');
+      const meta = parseSkillFrontmatter(content);
+      if (meta && meta.name && !seen.has(meta.name)) {
+        seen.add(meta.name);
+        skills.push(meta);
+      }
     }
   }
 

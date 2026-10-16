@@ -262,6 +262,10 @@ async function main() {
 
     console.log(`\x1b[34m[${agent.toUpperCase()}]\x1b[0m -> ${baseDir}`);
 
+    // On Windows, Antigravity's Go Language Server skips NTFS junctions (os.ReadDir DirEntry.IsDir() === false).
+    // Always copy real directories for Antigravity on win32 so slash commands (/skill-name) are discovered.
+    const shouldCopy = options.copy || (process.platform === 'win32' && agent === 'antigravity');
+
     for (const skill of targetSkills) {
       const source = path.join(SKILLS_DIR, skill);
       const dest = path.join(baseDir, skill);
@@ -276,7 +280,7 @@ async function main() {
             console.log(`  ○ (not found) ${skill}`);
           }
         } else {
-          const action = createSymlink(source, dest, options.copy);
+          const action = createSymlink(source, dest, shouldCopy);
           console.log(`  \x1b[32m✓ ${action}\x1b[0m ${skill} -> ${dest}`);
           successCount++;
         }
