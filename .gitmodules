@@ -1,0 +1,6 @@
+[submodule "vendors/addyosmani-agent-skills"]
+	path = vendors/addyosmani-agent-skills
+	url = https://github.com/addyosmani/agent-skills.git
+[submodule "vendors/dietrichgebert-ponytail"]
+	path = vendors/dietrichgebert-ponytail
+	url = https://github.com/DietrichGebert/ponytail.git

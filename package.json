@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "setup": "node scripts/setup.mjs",
+    "sync": "node scripts/sync-vendors.mjs",
     "link": "node scripts/link.mjs",
     "link:global": "node scripts/link.mjs --global",
     "link:project": "node scripts/link.mjs --project",
