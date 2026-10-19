@@ -1,59 +1,94 @@
-# Anthony Fu's Skills
+# Tuquet Skills
 
-A collection of [Agent Skills](https://agentskills.io/home) reflecting [Anthony Fu](https://github.com/antfu)'s preferences, experience, and best practices, along with usage documentation for the tools.
+A curated collection of [Agent Skills](https://agentskills.io/home) reflecting Tuquet's engineering standards, quality benchmarks, and best practices for AI coding agents.
 
 > [!IMPORTANT]
-> This is a proof-of-concept project for generating agent skills from source documentation and keeping them in sync.
-> I haven't fully tested how well the skills perform in practice, so feedback and contributions are greatly welcome.
+> Built on top of Anthony Fu's open architecture for keeping agent skills synchronized with upstream sources, Tuquet Skills provides enterprise-grade runbooks and autonomous workflows across Google Antigravity, Claude Code, Cursor, and Codex.
 
 ## Installation
 
-This repo mainly hosts the skills. The recommended way to use them is [`@antfu/skills`](https://github.com/antfu/skills-pack), a skills pack installed with [skills-npm](https://github.com/antfu/skills-npm). Besides my own skills, the pack includes curated skills from other authors, and your package manager keeps them in sync:
+### Install via Skills CLI (Recommended)
+
+To install all skills from this repository into your project, use the [skills](https://github.com/vercel-labs/skills) CLI:
 
 ```bash
-pnpm i -D skills-npm @antfu/skills
-pnpx skills-npm setup
+npx skills add tuquet/skills --skill='*'
 ```
 
-See [antfu/skills-pack](https://github.com/antfu/skills-pack) for the full list of skills in the pack.
-
-### Install From This Repo
-
-To install skills from this repo directly, use the [skills](https://github.com/vercel-labs/skills) CLI:
+Or install all of them globally for all projects on your workstation:
 
 ```bash
-pnpx skills add antfu/skills --skill='*'
+npx skills add tuquet/skills --skill='*' -g
 ```
 
-or to install all of them globally:
+To install an individual skill:
 
 ```bash
-pnpx skills add antfu/skills --skill='*' -g
+npx skills add tuquet/skills --skill=vue
+npx skills add tuquet/skills --skill=vitest
 ```
 
-## Skills
+---
 
-This repo includes skills from different sources with different scopes.
+## Skills Catalog
 
-### Hand-maintained Skills
+This repository organizes skills by scope, mindset, and ecosystem.
+
+### Hand-maintained & Preference Skills
 
 > Opinionated
 
-Manually maintained by Anthony Fu with his preferred tools, setup conventions, and best practices.
+Manually maintained engineering standards, setup conventions, and workflows.
 
-| Skill | Description |
-|-------|-------------|
-| [antfu](skills/antfu) | Anthony Fu's preferences and best practices for app/library projects (eslint, pnpm, vitest, vue, etc.) |
-| [antfu-create-pr](skills/antfu-create-pr) | Open reviewable PRs: Conventional Commits title, evidence-based body, before/after screenshots via `gh --attach` (adapted from [moeru-ai/airi](https://github.com/moeru-ai/airi/blob/main/.agents/skills/create-pr/SKILL.md)) |
+| Skill | Description | Author |
+|-------|-------------|--------|
+| [antfu](skills/antfu) | Anthony Fu's preferences and best practices for app/library projects (eslint, pnpm, vitest, vue, etc.) | Anthony Fu |
+| [antfu-create-pr](skills/antfu-create-pr) | Open reviewable PRs with Conventional Commits title, evidence-based body, before/after screenshots | Anthony Fu |
 
-> [!TIP]
-> For design, see [antfu/design](https://github.com/antfu/design), which ships the `antfu-design` skill alongside the `@antfu/design` package.
+### Production Engineering & Reliability
+
+Curated from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills). Production-grade engineering runbooks and verification patterns.
+
+| Skill | Description | Author |
+|-------|-------------|--------|
+| [addy-code-review-and-quality](skills/addy-code-review-and-quality) | Conducts multi-axis code review before merging changes | Addy Osmani |
+| [addy-spec-driven-development](skills/addy-spec-driven-development) | Write structured specifications and boundary contracts before writing code | Addy Osmani |
+| [addy-planning-and-task-breakdown](skills/addy-planning-and-task-breakdown) | Break complex engineering requirements into ordered, verifiable atomic tasks | Addy Osmani |
+| [addy-incremental-implementation](skills/addy-incremental-implementation) | Implement features one vertical slice at a time with test-backed commits | Addy Osmani |
+| [addy-test-driven-development](skills/addy-test-driven-development) | Drive feature development and bug fixes using the red-green-refactor loop | Addy Osmani |
+| [addy-constraint-driven-development](skills/addy-constraint-driven-development) | Define and enforce project-wide quality bars, security, and architectural boundaries | Addy Osmani |
+| [addy-browser-testing-with-devtools](skills/addy-browser-testing-with-devtools) | Test in real browsers via Chrome DevTools protocol to inspect DOM, network, and console | Addy Osmani |
+| [addy-performance-optimization](skills/addy-performance-optimization) | Optimize application performance across frontend, backend, queries, and rendering lifecycles | Addy Osmani |
+| [addy-code-simplification](skills/addy-code-simplification) | Simplify code structure and remove redundancy without changing runtime behavior | Addy Osmani |
+| [addy-shipping-and-launch](skills/addy-shipping-and-launch) | Automated readiness verification, checklist enforcement, and production release | Addy Osmani |
+| [addy-security-and-hardening](skills/addy-security-and-hardening) | Harden code against vulnerabilities (OWASP Top 10, sanitization, zero-trust) | Addy Osmani |
+| [addy-frontend-ui-engineering](skills/addy-frontend-ui-engineering) | Build accessible, responsive, production-quality user interfaces meeting WCAG standards | Addy Osmani |
+| [addy-debugging-and-error-recovery](skills/addy-debugging-and-error-recovery) | Systematic root-cause debugging for unexpected runtime errors and build failures | Addy Osmani |
+| [addy-api-and-interface-design](skills/addy-api-and-interface-design) | Design stable, future-proof APIs, module boundaries, and type contracts | Addy Osmani |
+| [addy-context-engineering](skills/addy-context-engineering) | Optimize agent context setup, prompt engineering, and rule configurations | Addy Osmani |
+
+### Desktop App Engineering (Tauri Ecosystem)
+
+Curated from [full-stack-skills/tauri-skills](https://github.com/full-stack-skills/tauri-skills). Comprehensive production runbooks for Tauri v2 cross-platform apps.
+
+| Skill | Description | Author |
+|-------|-------------|--------|
+| [tauri](skills/tauri) | Core Tauri architecture, commands, events, window management, and configuration | Full Stack Skills |
+| [tauri-setup](skills/tauri-setup) | Environment setup, Rust/Node toolchain verification, and prerequisites checklist | Full Stack Skills |
+| [tauri-scaffold](skills/tauri-scaffold) | Project initialization, frontend framework selection, and app templates | Full Stack Skills |
+| [tauri-security](skills/tauri-security) | CSP configuration, IPC allowlists, capabilities, and permission scopes | Full Stack Skills |
+| [tauri-build](skills/tauri-build) | Multi-platform production builds, code signing, and binary packaging | Full Stack Skills |
+| [tauri-ipc](skills/tauri-ipc) | Type-safe IPC bridge patterns between Rust backend and frontend | Full Stack Skills |
+| [tauri-app-updater](skills/tauri-app-updater) | Over-the-air auto-updater integration and signature verification | Full Stack Skills |
+| [tauri-app-system-tray](skills/tauri-app-system-tray) | Native system tray menus, tray icons, and event handling | Full Stack Skills |
+| [tauri-app-single-instance](skills/tauri-app-single-instance) | Single-instance lock and command-line payload routing | Full Stack Skills |
+| [tauri-app-deep-linking](skills/tauri-app-deep-linking) | Custom URL protocol schemes and deep linking handler | Full Stack Skills |
 
 ### Skills Generated from Official Documentation
 
-> Unopinionated but with tilted focus (e.g. TypeScript, ESM, Composition API, and other modern stacks)
+> Unopinionated but focused on modern TypeScript, ESM, and Vue Composition API
 
-Generated from official documentation and fine-tuned by Anthony.
+Generated from official documentation and kept in sync with upstream changes.
 
 | Skill | Description | Source |
 |-------|-------------|--------|
@@ -65,45 +100,27 @@ Generated from official documentation and fine-tuned by Anthony.
 | [vitest](skills/vitest) | Vitest - unit testing framework powered by Vite | [vitest-dev/vitest](https://github.com/vitest-dev/vitest) |
 | [unocss](skills/unocss) | UnoCSS - atomic CSS engine, presets, transformers | [unocss/unocss](https://github.com/unocss/unocss) |
 | [pnpm](skills/pnpm) | pnpm - fast, disk space efficient package manager | [pnpm/pnpm.io](https://github.com/pnpm/pnpm.io) |
+| [nitro](skills/nitro) | Nitro - server engine powering Nuxt | [nitrojs/nitro](https://github.com/nitrojs/nitro) |
 
-## FAQ
+---
 
-### What Makes This Collection Different?
+## Development & Maintenance
 
-This collection is opinionated, but the key difference is that it uses git submodules to directly reference source documentation. This provides more reliable context and allows the skills to stay up-to-date with upstream changes over time.
+This repository utilizes Git Submodules in `sources/` to track upstream repositories directly:
 
-The project is also designed to be flexible - you can use it as a template to generate your own skills collection.
+```bash
+# 1. Install dependencies
+pnpm install
 
-### Skills vs llms.txt vs AGENTS.md
+# 2. Interactive CLI for submodule management
+pnpm start
 
-To me, the value of skills lies in being **shareable** and **on-demand**.
+# 3. Synchronize all submodules & skills non-interactively
+pnpm start sync
+```
 
-Being shareable makes prompts easier to manage and reuse across projects. Being on-demand means skills can be pulled in as needed, scaling far beyond what any agent's context window could fit at once.
-
-You might hear people say "AGENTS.md outperforms skills". I think that's true — AGENTS.md loads everything upfront, so agents always respect it, whereas skills can have false negatives where agents don't pull them in when you'd expect. That said, I see this more as a gap in tooling and integration that will improve over time. Skills are really just a standardized format for agents to consume—plain markdown files at the end of the day. Think of them as a knowledge base for agents. If you want certain skills to always apply, you can reference them directly in your AGENTS.md.
-
-## Generate Your Own Skills
-
-Fork this project to create your own customized skill collection.
-
-1. Fork or clone this repository
-2. Install dependencies: `pnpm install`
-3. Update `meta.ts` with your own projects and skill sources
-4. Run `pnpm start cleanup` to remove existing submodules and skills
-5. Run `pnpm start init` to clone the submodules
-6. Run `pnpm start sync` to pull the latest source docs
-7. Ask your agent to `Generate skills for \<project\>` (recommended one at a time to manage token usage)
-
-See [AGENTS.md](AGENTS.md) for detailed generation guidelines.
-
-## Sponsors
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg' alt='Sponsors' />
-  </a>
-</p>
+---
 
 ## License
 
-Skills and the scripts in this repository are [MIT](LICENSE.md) licensed.
+Skills and curation scripts in this repository are licensed under the [MIT](LICENSE.md) License.
