@@ -21,6 +21,12 @@ Or install all of them globally for all projects on your workstation:
 npx skills add tuquet/skills --skill='*' -g
 ```
 
+Or install only agent
+
+```bash
+npx skills add tuquet/skills --agent antigravity --skill='*' -y
+```
+
 To install an individual skill:
 
 ```bash
