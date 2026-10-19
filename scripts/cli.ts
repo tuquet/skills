@@ -1,5 +1,5 @@
 import { execSync } from 'node:child_process'
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync } from 'node:fs'
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
@@ -164,7 +164,7 @@ async function syncSubmodules() {
 
   spinner.start('Updating submodules...')
   try {
-    exec('git submodule update --remote --merge')
+    exec('git submodule update --init --recursive')
     spinner.stop('Submodules updated')
   }
   catch (e) {
@@ -172,7 +172,54 @@ async function syncSubmodules() {
     return
   }
 
-  p.log.success('All submodules synced')
+  spinner.start('Exporting skills from submodules to skills/ ...')
+  const skillsDir = join(root, 'skills')
+  if (!existsSync(skillsDir)) {
+    mkdirSync(skillsDir, { recursive: true })
+  }
+
+  // Auto-discover and export skills from packages inside sources/
+  const sourcesDir = join(root, 'sources')
+  if (existsSync(sourcesDir)) {
+    const subDirs = readdirSync(sourcesDir, { withFileTypes: true })
+      .filter(d => d.isDirectory())
+      .map(d => d.name)
+
+    for (const sub of subDirs) {
+      const subSkillsDir = join(sourcesDir, sub, 'skills')
+      if (!existsSync(subSkillsDir))
+        continue
+
+      const prefix = sub === 'addyosmani' ? 'addy-' : ''
+      const available = readdirSync(subSkillsDir, { withFileTypes: true })
+        .filter(d => d.isDirectory() && existsSync(join(subSkillsDir, d.name, 'SKILL.md')))
+        .map(d => d.name)
+
+      for (const skillName of available) {
+        const srcPath = join(subSkillsDir, skillName)
+        const destName = `${prefix}${skillName}`
+        const destPath = join(skillsDir, destName)
+
+        cpSync(srcPath, destPath, { recursive: true })
+
+        if (prefix) {
+          const skillMd = join(destPath, 'SKILL.md')
+          if (existsSync(skillMd)) {
+            const lines = readFileSync(skillMd, 'utf-8').split(/\r?\n/)
+            const updated = lines.map((l) => {
+              if (l.startsWith('name:'))
+                return `name: ${destName}`
+              return l
+            }).join('\n')
+            writeFileSync(skillMd, updated, 'utf-8')
+          }
+        }
+      }
+    }
+  }
+
+  spinner.stop('Skills exported successfully')
+  p.log.success('All submodules synced & skills exported')
 }
 
 async function checkUpdates() {
@@ -219,6 +266,29 @@ function getExpectedSkillNames(): Set<string> {
   // Skills from submodules (generated skills use same name as submodule key)
   for (const name of Object.keys(submodules)) {
     expected.add(name)
+  }
+
+  // Multi-skill submodules
+  const sourcesDir = join(root, 'sources')
+  if (existsSync(sourcesDir)) {
+    const subDirs = readdirSync(sourcesDir, { withFileTypes: true })
+      .filter(d => d.isDirectory())
+      .map(d => d.name)
+
+    for (const sub of subDirs) {
+      const subSkillsDir = join(sourcesDir, sub, 'skills')
+      if (!existsSync(subSkillsDir))
+        continue
+
+      const prefix = sub === 'addyosmani' ? 'addy-' : ''
+      const available = readdirSync(subSkillsDir, { withFileTypes: true })
+        .filter(d => d.isDirectory() && existsSync(join(subSkillsDir, d.name, 'SKILL.md')))
+        .map(d => d.name)
+
+      for (const skillName of available) {
+        expected.add(`${prefix}${skillName}`)
+      }
+    }
   }
 
   // Manual skills
