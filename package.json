@@ -1,7 +1,23 @@
 {
-  "type": "module",
+  "name": "@tuquet/skills",
+  "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@12.8.1",
+  "homepage": "https://github.com/tuquet/skills#readme",
+  "bugs": {
+    "url": "https://github.com/tuquet/skills/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuquet/skills.git"
+  },
+  "license": "MIT",
+  "author": "Tuquet Team <dev@tuquet.com>",
+  "type": "module",
+  "packageManager": "pnpm@12.4.1",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=9.0.0"
+  },
   "scripts": {
     "lint": "eslint .",
     "start": "node scripts/cli.ts",
@@ -18,10 +34,10 @@
     "skills-npm": "^4.0.0",
     "typescript": "^6.0.3"
   },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
   "lint-staged": {
     "*": "eslint --fix --no-warn-ignored"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   }
 }

@@ -1,9 +1,9 @@
-# Tuquet Skills
+# Skills
 
 A curated collection of [Agent Skills](https://agentskills.io/home) reflecting Tuquet's engineering standards, quality benchmarks, and best practices for AI coding agents.
 
 > [!IMPORTANT]
-> Built on top of Anthony Fu's open architecture for keeping agent skills synchronized with upstream sources, Tuquet Skills provides enterprise-grade runbooks and autonomous workflows across Google Antigravity, Claude Code, Cursor, and Codex.
+> Built on top of Anthony Fu's open architecture for keeping agent skills synchronized with upstream sources, Skills provides enterprise-grade runbooks and autonomous workflows across Google Antigravity, Claude Code, Cursor, and Codex.
 
 ## Installation
 
