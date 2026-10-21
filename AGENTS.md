@@ -23,7 +23,7 @@ For OSS projects **without existing skills**. We clone the repo as a submodule a
 
 ### Type 2: Hand-written Skills
 
-For skills that are written by Anthony Fu with his preferences, experience, tastes and best practices.
+For skills that are written by @tuquet/skills with its preferences, experience, tastes and best practices.
 
 You don't need to do anything about them unless being asked.
 
@@ -111,9 +111,9 @@ Also record the version of the tool/project when the skills were generated.
 name: {name}
 description: {description}
 metadata:
-  author: Anthony Fu
+  author: "@tuquet/skills"
   version: "2026.1.1"
-  source: Generated from {source-url}, scripts located at https://github.com/antfu/skills
+  source: Generated from {source-url}, scripts located at https://github.com/tuquet/skills
 ---
 
 > The skill is based on {project} v{version}, generated at {date}.

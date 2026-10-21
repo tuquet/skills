@@ -3,7 +3,7 @@
 A curated collection of [Agent Skills](https://agentskills.io/home) reflecting Tuquet's engineering standards, quality benchmarks, and best practices for AI coding agents.
 
 > [!IMPORTANT]
-> Built on top of Anthony Fu's open architecture for keeping agent skills synchronized with upstream sources, Skills provides enterprise-grade runbooks and autonomous workflows across Google Antigravity, Claude Code, Cursor, and Codex.
+> Built on top of an open-source architecture for keeping agent skills synchronized with upstream sources, Skills provides enterprise-grade runbooks and autonomous workflows across Google Antigravity, Claude Code, Cursor, and Codex.
 
 ## Installation
 
@@ -48,8 +48,8 @@ Manually maintained engineering standards, setup conventions, and workflows.
 
 | Skill | Description | Author |
 |-------|-------------|--------|
-| [antfu](skills/antfu) | Anthony Fu's preferences and best practices for app/library projects (eslint, pnpm, vitest, vue, etc.) | Anthony Fu |
-| [antfu-create-pr](skills/antfu-create-pr) | Open reviewable PRs with Conventional Commits title, evidence-based body, before/after screenshots | Anthony Fu |
+| [antfu](skills/antfu) | Anthony Fu's preferences and best practices for app/library projects (eslint, pnpm, vitest, vue, etc.) | @tuquet/skills |
+| [antfu-create-pr](skills/antfu-create-pr) | Open reviewable PRs with Conventional Commits title, evidence-based body, before/after screenshots | @tuquet/skills |
 
 ### Production Engineering & Reliability
 

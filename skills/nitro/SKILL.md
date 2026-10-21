@@ -2,9 +2,9 @@
 name: nitro
 description: Nitro is the framework-agnostic server toolkit (powering Nuxt) for building and deploying web servers anywhere. Use when working with nitro.config, server routes/event handlers, route rules, caching, storage, tasks, websockets, or deploying to Node/Bun/Deno/Cloudflare/Vercel.
 metadata:
-  author: Anthony Fu
+  author: "@tuquet/skills"
   version: "2026.9.25"
-  source: Generated from https://github.com/nitrojs/nitro, scripts located at https://github.com/antfu/skills
+  source: Generated from https://github.com/nitrojs/nitro, scripts located at https://github.com/tuquet/skills
 ---
 
 > The skill is based on Nitro v3 (beta, 3.0.260903), generated at 2026-09-25.

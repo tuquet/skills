@@ -2,7 +2,7 @@
 name: antfu-create-pr
 description: Create a reviewable GitHub pull request from the current branch with a Conventional Commits title, a concise evidence-based body, and before/after screenshots for UI changes. Use when asked to open, create, publish, or prepare a PR.
 metadata:
-  author: Anthony Fu
+  author: "@tuquet/skills"
   version: "2026.10.09"
 ---
 

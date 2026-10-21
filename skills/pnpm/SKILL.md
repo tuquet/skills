@@ -2,9 +2,9 @@
 name: pnpm
 description: Node.js package manager with strict dependency resolution. Use when running pnpm specific commands, configuring workspaces via pnpm-workspace.yaml, or managing dependencies with catalogs, patches, overrides, config dependencies, or the global virtual store.
 metadata:
-  author: Anthony Fu
+  author: "@tuquet/skills"
   version: "2026.9.25"
-  source: Generated from https://github.com/pnpm/pnpm, scripts located at https://github.com/antfu/skills
+  source: Generated from https://github.com/pnpm/pnpm, scripts located at https://github.com/tuquet/skills
 ---
 
 pnpm is a fast, disk space efficient package manager. It uses a content-addressable store to deduplicate packages across all projects on a machine, and enforces strict dependency resolution by default, preventing phantom dependencies.
