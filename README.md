@@ -90,6 +90,15 @@ Curated from [full-stack-skills/tauri-skills](https://github.com/full-stack-skil
 | [tauri-app-single-instance](skills/tauri-app-single-instance) | Single-instance lock and command-line payload routing | Full Stack Skills |
 | [tauri-app-deep-linking](skills/tauri-app-deep-linking) | Custom URL protocol schemes and deep linking handler | Full Stack Skills |
 
+### Backend & Database Engineering (Supabase Ecosystem)
+
+Curated from [supabase/agent-skills](https://github.com/supabase/agent-skills). Official agent skills for Supabase services and Postgres database optimization.
+
+| Skill | Description | Author |
+|-------|-------------|--------|
+| [supabase](skills/supabase) | Comprehensive Supabase development: Auth, RLS, Storage, Realtime, Edge Functions, MCP Server, CLI migrations | Supabase |
+| [supabase-postgres-best-practices](skills/supabase-postgres-best-practices) | Postgres performance and schema design rules across 8 priority categories (queries, indexes, connections, RLS) | Supabase |
+
 ### Skills Generated from Official Documentation
 
 > Unopinionated but focused on modern TypeScript, ESM, and Vue Composition API

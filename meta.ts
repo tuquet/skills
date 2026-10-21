@@ -13,6 +13,7 @@ export const submodules = {
   'nitro': 'https://github.com/nitrojs/nitro',
   'addyosmani': 'https://github.com/addyosmani/agent-skills',
   'tauri-skills': 'https://github.com/full-stack-skills/tauri-skills',
+  'supabase': 'https://github.com/supabase/agent-skills',
 }
 
 /**

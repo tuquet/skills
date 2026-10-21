@@ -31,3 +31,6 @@
 [submodule "sources/tauri-skills"]
 	path = sources/tauri-skills
 	url = https://github.com/full-stack-skills/tauri-skills
+[submodule "sources/supabase"]
+	path = sources/supabase
+	url = https://github.com/supabase/agent-skills
