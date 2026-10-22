@@ -50,6 +50,9 @@ Manually maintained engineering standards, setup conventions, and workflows.
 |-------|-------------|--------|
 | [antfu](skills/antfu) | Anthony Fu's preferences and best practices for app/library projects (eslint, pnpm, vitest, vue, etc.) | @tuquet/skills |
 | [antfu-create-pr](skills/antfu-create-pr) | Open reviewable PRs with Conventional Commits title, evidence-based body, before/after screenshots | @tuquet/skills |
+| [google-cli-command](skills/google-cli-command) | Google Cloud CLI grammar, noun-verb ergonomics, POSIX/GNU flag standards | @tuquet/skills |
+| [google-console-output](skills/google-console-output) | Google terminal output standard, Rule of Silence, clean stdout/stderr, pipeable flags | @tuquet/skills |
+| [google-developer-docs](skills/google-developer-docs) | Google Developer Documentation Style Guide, active voice, task-based technical documentation | @tuquet/skills |
 
 ### Production Engineering & Reliability
 

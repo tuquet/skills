@@ -22,4 +22,7 @@ export const submodules = {
 export const manual = [
   'antfu',
   'antfu-create-pr',
+  'google-cli-command',
+  'google-console-output',
+  'google-developer-docs',
 ]
