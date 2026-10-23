@@ -87,7 +87,7 @@ Curated from [full-stack-skills/tauri-skills](https://github.com/full-stack-skil
 | [tauri-scaffold](skills/tauri-scaffold) | Project initialization, frontend framework selection, and app templates | Full Stack Skills |
 | [tauri-security](skills/tauri-security) | CSP configuration, IPC allowlists, capabilities, and permission scopes | Full Stack Skills |
 | [tauri-build](skills/tauri-build) | Multi-platform production builds, code signing, and binary packaging | Full Stack Skills |
-| [tauri-ipc](skills/tauri-ipc) | Type-safe IPC bridge patterns between Rust backend and frontend | Full Stack Skills |
+| [tauri-ipc](skills/tauri-ipc) | Type-safe IPC gateway patterns between Rust backend and frontend | Full Stack Skills |
 | [tauri-app-updater](skills/tauri-app-updater) | Over-the-air auto-updater integration and signature verification | Full Stack Skills |
 | [tauri-app-system-tray](skills/tauri-app-system-tray) | Native system tray menus, tray icons, and event handling | Full Stack Skills |
 | [tauri-app-single-instance](skills/tauri-app-single-instance) | Single-instance lock and command-line payload routing | Full Stack Skills |
