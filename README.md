@@ -102,6 +102,19 @@ Curated from [supabase/agent-skills](https://github.com/supabase/agent-skills). 
 | [supabase](skills/supabase) | Comprehensive Supabase development: Auth, RLS, Storage, Realtime, Edge Functions, MCP Server, CLI migrations | Supabase |
 | [supabase-postgres-best-practices](skills/supabase-postgres-best-practices) | Postgres performance and schema design rules across 8 priority categories (queries, indexes, connections, RLS) | Supabase |
 
+### Code Minimalism & Token Economy
+
+Curated from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail). YAGNI-first engineering: the smallest change that fully solves the task, never at the cost of validation, error handling, security, or accessibility.
+
+| Skill | Description | Author |
+|-------|-------------|--------|
+| [ponytail](skills/ponytail) | Lazy senior dev mode: the smallest change that fully solves the task, and a test when there is logic | Dietrich Gebert |
+| [ponytail-review](skills/ponytail-review) | Quality review of a change: is the logic right, is it safe, does it hold under real load | Dietrich Gebert |
+| [ponytail-audit](skills/ponytail-audit) | Quality audit of a whole repo: bugs, security holes, what breaks under real load | Dietrich Gebert |
+| [ponytail-debt](skills/ponytail-debt) | List every `shortcut:` comment (and older `ponytail:` ones) as a debt ledger | Dietrich Gebert |
+| [ponytail-gain](skills/ponytail-gain) | Show ponytail's measured savings (code, cost, speed) from the benchmark | Dietrich Gebert |
+| [ponytail-help](skills/ponytail-help) | Quick reference for ponytail levels, skills and commands | Dietrich Gebert |
+
 ### Skills Generated from Official Documentation
 
 > Unopinionated but focused on modern TypeScript, ESM, and Vue Composition API

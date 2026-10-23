@@ -14,6 +14,7 @@ export const submodules = {
   'addyosmani': 'https://github.com/addyosmani/agent-skills',
   'tauri-skills': 'https://github.com/full-stack-skills/tauri-skills',
   'supabase': 'https://github.com/supabase/agent-skills',
+  'ponytail': 'https://github.com/DietrichGebert/ponytail',
 }
 
 /**

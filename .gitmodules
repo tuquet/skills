@@ -34,3 +34,6 @@
 [submodule "sources/supabase"]
 	path = sources/supabase
 	url = https://github.com/supabase/agent-skills
+[submodule "sources/ponytail"]
+	path = sources/ponytail
+	url = https://github.com/DietrichGebert/ponytail
